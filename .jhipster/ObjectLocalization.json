@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "elementObjectName",
+            "javadoc": "名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "x",
+            "javadoc": "元素在画面的显示位置（相对左上角横坐标）",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "y",
+            "javadoc": "元素在画面的显示位置（相对左上角纵坐标）",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "width",
+            "javadoc": "元素在画面的显示尺寸（显示长度）",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "height",
+            "javadoc": "元素在画面的显示尺寸（显示宽度）",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20170502085416",
+    "entityTableName": "object_localization",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

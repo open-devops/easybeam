@@ -1,0 +1,122 @@
+<!-- Administration Menu Items -->
+<md-menu #adminMenu="mdMenu" xPosition="before" yPosition="below" [overlapTrigger]="true">
+    <td-menu>
+        <!-- Administration Menu Sub Header -->
+        <div td-menu-header class="md-subhead" jhiTranslate="global.menu.admin.main">Administration</div>
+        <md-nav-list dense>
+            <!-- User management Menu Item -->
+            <a md-list-item routerLink="user-management">
+                <md-icon md-list-avatar>group</md-icon>
+                <h4 md-line>
+                    <span jhiTranslate="global.menu.admin.userManagement">User management</span>
+                </h4>
+            </a>
+            <md-divider></md-divider>
+            <!-- User tracker Menu Item -->
+            <a md-list-item routerLink="jhi-tracker">
+                <md-icon md-list-avatar>track_changes</md-icon>
+                <h4 md-line>
+                    <span jhiTranslate="global.menu.admin.tracker">User tracker</span>
+                </h4>
+            </a>
+            <md-divider></md-divider>
+            <!-- Metrics Menu Item -->
+            <a md-list-item routerLink="jhi-metrics">
+                <md-icon md-list-avatar>trending_up</md-icon>
+                <h4 md-line>
+                    <span jhiTranslate="global.menu.admin.metrics">Metrics</span>
+                </h4>
+            </a>
+            <md-divider></md-divider>
+            <!-- Health Menu Item -->
+            <a md-list-item routerLink="jhi-health">
+                <md-icon md-list-avatar>favorite</md-icon>
+                <h4 md-line>
+                    <span jhiTranslate="global.menu.admin.health">Health</span>
+                </h4>
+            </a>
+            <md-divider></md-divider>
+            <!-- Audits Menu Item -->
+            <a md-list-item routerLink="audits">
+                <md-icon md-list-avatar>check_circle</md-icon>
+                <h4 md-line>
+                    <span jhiTranslate="global.menu.admin.audits">Audits</span>
+                </h4>
+            </a>
+            <md-divider></md-divider>
+            <!-- Logs Menu Item -->
+            <a md-list-item routerLink="logs">
+                <md-icon md-list-avatar>report</md-icon>
+                <h4 md-line>
+                    <span jhiTranslate="global.menu.admin.logs">Logs</span>
+                </h4>
+            </a>
+            <md-divider></md-divider>
+            <!-- API Menu Item -->
+            <!--<a md-list-item routerLink="docs">
+                <md-icon md-list-avatar>font_download</md-icon>
+                <h4 md-line>
+                    <span jhiTranslate="global.menu.admin.apidocs">API</span>
+                </h4>
+            </a>
+            <md-divider></md-divider>-->
+            <!-- Database Menu Item -->
+            <!--<a md-list-item href='/h2-console' target="_tab">
+                <md-icon md-list-avatar>data_usage</md-icon>
+                <h4 md-line>
+                    <span jhiTranslate="global.menu.admin.database">Database</span>
+                </h4>
+            </a>-->
+        </md-nav-list>
+    </td-menu>
+</md-menu>
+<!-- Language Menu Items -->
+<md-menu #languageMenu="mdMenu" xPosition="before" yPosition="below" [overlapTrigger]="false">
+    <button md-menu-item *ngFor="let language of languages" (click)="changeLanguage(language);">
+        {{language | findLanguageFromKey}}
+    </button>
+</md-menu>
+<!-- Account Menu Items -->
+<md-menu #accountMenu="mdMenu" xPosition="before" yPosition="below" [overlapTrigger]="true">
+    <td-menu>
+        <!-- Account Menu Sub Header -->
+        <div td-menu-header class="md-subhead" jhiTranslate="global.menu.account.main">Account</div>
+        <md-nav-list dense>
+            <!-- Settings Menu Item -->
+            <a md-list-item routerLink="settings">
+                <md-icon md-list-avatar>settings</md-icon>
+                <h4 md-line>
+                    <span jhiTranslate="global.menu.account.settings">Settings</span>
+                </h4>
+            </a>
+            <md-divider></md-divider>
+            <!-- Password Menu Item -->
+            <a md-list-item routerLink="password">
+                <md-icon md-list-avatar>vpn_key</md-icon>
+                <h4 md-line>
+                    <span jhiTranslate="global.menu.account.password">Password</span>
+                </h4>
+            </a>
+            <md-divider></md-divider>
+            <!-- Sign out Menu Item -->
+            <a md-list-item (click)="logout()">
+                <md-icon md-list-avatar>exit_to_app</md-icon>
+                <h4 md-line>
+                    <span jhiTranslate="global.menu.account.logout">Sign out</span>
+                </h4>
+            </a>
+        </md-nav-list>
+    </td-menu>
+</md-menu>
+<!-- Administration Menu Bar -->
+<button md-icon-button [mdMenuTriggerFor]="adminMenu" *jhiHasAnyAuthority="'ROLE_ADMIN'">
+    <md-icon>verified_user</md-icon>
+</button>
+<!-- Language Menu Bar -->
+<button md-icon-button [mdMenuTriggerFor]="languageMenu" *ngIf="languages">
+    <md-icon>language</md-icon>
+</button>
+<!-- Account Menu Bar -->
+<button md-icon-button [mdMenuTriggerFor]="accountMenu">
+    <md-icon>account_circle</md-icon>
+</button>

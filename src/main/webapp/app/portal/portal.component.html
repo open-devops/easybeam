@@ -1,0 +1,48 @@
+<td-layout #layout>
+    <td-navigation-drawer sidenavTitle="{{'global.title' | translate}}" navigationRoute="/portal" *ngIf="account" [name]="account.login" [email]="account.email">
+        <md-nav-list>
+            <ng-template let-item let-last="last" ngFor [ngForOf]="routes">
+                <a md-list-item [routerLink]="[item.route]" (click)="layout.close()">
+                    <md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
+            </ng-template>
+        </md-nav-list>
+        <md-nav-list td-navigation-drawer-menu>
+            <a md-list-item (click)="logout()">
+                <md-icon>exit_to_app</md-icon>
+                <span jhiTranslate="global.menu.account.logout">Sign out</span>
+            </a>
+        </md-nav-list>
+    </td-navigation-drawer>
+    <td-layout-nav toolbarTitle="{{'global.title' | translate}}" navigationRoute="/portal">
+        <div td-toolbar-content layout="row" layout-align="end center" flex>
+            <div *ngIf="currentProject">
+                <button md-button [mdMenuTriggerFor]="projectListMenu">
+                    {{currentProject.name}}
+                    <md-icon>arrow_drop_down</md-icon>
+                </button>
+                <md-menu #projectListMenu="mdMenu" xPosition="before" yPosition="below" [overlapTrigger]="true">
+                    <td-menu>
+                        <div td-menu-header class="md-subhead push" jhiTranslate="global.sidebar.switch">Switch Project</div>
+                        <md-nav-list dense>
+                            <button md-menu-item *ngFor="let project of projects" (click)="setCurrentProject(project)">{{project.name}}</button>
+                        </md-nav-list>
+                    </td-menu>
+                </md-menu>
+            </div>
+            <eb-portal-topbar></eb-portal-topbar>
+        </div>
+        <div layout="column" layout-fill class="md-content">
+            <md-toolbar class="md-whiteframe-z1" *ngIf="isDashboardPage()">
+                <div td-toolbar-content layout="row" layout-align="start center" flex>
+                    <span jhiTranslate="dashboard.title">Project Dashboard</span>
+                    <span flex></span>
+                    <button md-icon-button><md-icon class="md-24">settings</md-icon></button>
+                </div>
+            </md-toolbar>
+            <div class="md-content" flex>
+                <router-outlet></router-outlet>
+                <router-outlet name="popup"></router-outlet>
+            </div>
+        </div>
+    </td-layout-nav>
+</td-layout>

@@ -1,0 +1,125 @@
+<div layout-gt-sm="row" layout-align="center center" tdMediaToggle="xl" [mediaClasses]="['push-sm']">
+    <div flex-gt-sm="60">
+        <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+            <md-card-title>
+                <md-card-title-text>
+                    <span jhiTranslate="register.title">Registration</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-subtitle>
+                <div class="alert alert-success" *ngIf="success" jhiTranslate="register.messages.success">
+                    <strong>Registration saved!</strong> Please check your email for confirmation.
+                </div>
+                <div class="alert alert-danger" *ngIf="error" jhiTranslate="register.messages.error.fail">
+                    <strong>Registration failed!</strong> Please try again later.
+                </div>
+                <div class="alert alert-danger" *ngIf="errorUserExists" jhiTranslate="register.messages.error.userexists">
+                    <strong>Login name already registered!</strong> Please choose another one.
+                </div>
+                <div class="alert alert-danger" *ngIf="errorEmailExists" jhiTranslate="register.messages.error.emailexists">
+                    <strong>Email is already in use!</strong> Please choose another one.
+                </div>
+                <div class="alert alert-danger" *ngIf="doNotMatch" jhiTranslate="global.messages.error.dontmatch">
+                    The password and its confirmation do not match!
+                </div>
+            </md-card-subtitle>
+            <md-divider></md-divider>
+            <md-card-content class="push-bottom-none">
+                <form #registerForm="ngForm">
+                    <!-- Username -->
+                    <div layout="row">
+                        <md-input-container flex>
+                            <input mdInput #login #loginControl="ngModel" type="text" placeholder="{{'global.form.username' | translate}}" [(ngModel)]="registerAccount.login" id="login" name="login" required minlength=1 maxlength=50 pattern="^[_'.@a-z0-9-]*$">
+                            <md-hint align="start">
+                                <span [hidden]="loginControl.pristine || !loginControl.errors?.required" class="tc-red-600" jhiTranslate="register.messages.validate.login.required">
+                                    Your username is required.
+                                </span>
+                                <span [hidden]="loginControl.pristine || !loginControl.errors?.minlength" class="tc-red-600" jhiTranslate="register.messages.validate.login.minlength">
+                                    Your username is required to be at least 1 character.
+                                </span>
+                                <span [hidden]="loginControl.pristine || !loginControl.errors?.maxlength" class="tc-red-600" jhiTranslate="register.messages.validate.login.maxlength">
+                                    Your username cannot be longer than 50 characters.
+                                </span>
+                                <span [hidden]="loginControl.pristine || !loginControl.errors?.pattern" class="tc-red-600" jhiTranslate="register.messages.validate.login.pattern">
+                                    Your username can only contain lower-case letters and digits.
+                                </span>
+                            </md-hint>
+                            <md-hint align="end">{{login.value.length}} / 50</md-hint>
+                        </md-input-container>
+                    </div>
+                    <!-- Email -->
+                    <div layout="row" class="push-top">
+                        <md-input-container flex>
+                            <input mdInput #email #emailControl="ngModel" type="email" placeholder="{{'global.form.email' | translate}}" [(ngModel)]="registerAccount.email" id="email" name="email" required minlength=5 maxlength=100 pattern="^[a-zA-Z0-9]+(\.[_a-zA-Z0-9]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,15})$">
+                            <md-hint align="start">
+                                <span [hidden]="emailControl.pristine || !emailControl.errors?.required" class="tc-red-600" jhiTranslate="global.messages.validate.email.required">
+                                    Your email is required.
+                                </span>
+                                <span [hidden]="emailControl.pristine || !emailControl.errors?.invalid" class="tc-red-600" jhiTranslate="global.messages.validate.email.invalid">
+                                    Your email is invalid.
+                                </span>
+                                <span [hidden]="emailControl.pristine || !emailControl.errors?.pattern" class="tc-red-600" jhiTranslate="global.messages.validate.email.invalid">
+                                    Your email is invalid.
+                                </span>
+                                <span [hidden]="emailControl.pristine || !emailControl.errors?.minlength" class="tc-red-600" jhiTranslate="global.messages.validate.email.minlength">
+                                    Your email is required to be at least 5 characters.
+                                </span>
+                                <span [hidden]="emailControl.pristine || !emailControl.errors?.maxlength" class="tc-red-600" jhiTranslate="global.messages.validate.email.maxlength">
+                                    Your email cannot be longer than 100 characters.
+                                </span>
+                            </md-hint>
+                            <md-hint align="end">{{email.value.length}} / 100</md-hint>
+                        </md-input-container>
+                    </div>
+                    <!-- New password -->
+                    <div layout="row" class="push-top">
+                        <md-input-container flex>
+                            <input mdInput #password #passwordControl="ngModel" type="password" placeholder="{{'global.form.newpassword' | translate}}" [(ngModel)]="registerAccount.password" id="password" name="password" required minlength=4 maxlength=50>
+                            <md-hint align="start">
+                                <span [hidden]="passwordControl.pristine || !passwordControl.errors?.required" class="tc-red-600" jhiTranslate="global.messages.validate.newpassword.required">
+                                    Your password is required.
+                                </span>
+                                <span [hidden]="passwordControl.pristine || !passwordControl.errors?.minlength" class="tc-red-600" jhiTranslate="global.messages.validate.newpassword.minlength">
+                                    Your password is required to be at least 4 characters.
+                                </span>
+                                <span [hidden]="passwordControl.pristine || !passwordControl.errors?.maxlength" class="tc-red-600" jhiTranslate="global.messages.validate.newpassword.maxlength">
+                                    Your password cannot be longer than 50 characters.
+                                </span>
+                            </md-hint>
+                            <md-hint align="end">
+                                <jhi-password-strength-bar [passwordToCheck]="registerAccount.password"></jhi-password-strength-bar>
+                            </md-hint>
+                        </md-input-container>
+                    </div>
+                    <!-- New password confirmation -->
+                    <div layout="row" class="push-top">
+                        <md-input-container flex>
+                            <input mdInput #confirmPasswordInput #confirmPasswordControl="ngModel" type="password" placeholder="{{'global.form.confirmpassword' | translate}}" [(ngModel)]="confirmPassword" id="confirmPassword" name="confirmPassword" required minlength=4 maxlength=50>
+                            <md-hint align="start">
+                                <span [hidden]="confirmPasswordControl.pristine || !confirmPasswordControl.errors?.required" class="tc-red-600" jhiTranslate="global.messages.validate.confirmpassword.required">
+                                    Your confirmation password is required.
+                                </span>
+                                <span [hidden]="confirmPasswordControl.pristine || !confirmPasswordControl.errors?.minlength" class="tc-red-600" jhiTranslate="global.messages.validate.confirmpassword.minlength">
+                                    Your confirmation password is required to be at least 4 characters.
+                                </span>
+                                <span [hidden]="confirmPasswordControl.pristine || !confirmPasswordControl.errors?.maxlength" class="tc-red-600" jhiTranslate="global.messages.validate.confirmpassword.maxlength">
+                                    Your confirmation password cannot be longer than 50 characters.
+                                </span>
+                            </md-hint>
+                            <md-hint align="end">{{confirmPasswordInput.value.length}} / {{password.value.length}}</md-hint>
+                        </md-input-container>
+                    </div>
+                </form>
+            </md-card-content>
+            <md-divider></md-divider>
+            <md-card-actions>
+                <button md-button [disabled]="registerForm.form.invalid" color="accent" (click)="register()">
+                    <span jhiTranslate="register.form.button">Register</span>
+                </button>
+                <button md-button (click)="goBack()">
+                    <span jhiTranslate="entity.action.back">Back</span>
+                </button>
+            </md-card-actions>
+        </md-card>
+    </div>
+</div>

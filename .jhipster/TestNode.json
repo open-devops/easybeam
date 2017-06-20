@@ -1,0 +1,92 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "operationSystem",
+            "otherEntityName": "testOperationSystem",
+            "otherEntityField": "name",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "testNode"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "webBrowser",
+            "otherEntityName": "testWebBrowser",
+            "otherEntityField": "name",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "testNode"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "javadoc": "名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "javadoc": "说明",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "javadoc": "测试节点类型",
+            "fieldType": "TestNodeType",
+            "fieldValues": "VM,CONTAINER",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "address",
+            "javadoc": "节点地址",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "port",
+            "javadoc": "节点端口号",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "supportWindowHeight",
+            "javadoc": "支持窗体大小 - 高度",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "supportWindowWidth",
+            "javadoc": "支持窗体大小 - 宽度",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "maxTotalThreadLimit",
+            "javadoc": "节点最大线程数",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "totalInExecutionThreads",
+            "javadoc": "节点器执行中线程数",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "status",
+            "javadoc": "节点状态",
+            "fieldType": "TestNodeStatus",
+            "fieldValues": "AVAILABLE,UNAVAILABLE,UNKNOWN"
+        }
+    ],
+    "changelogDate": "20170502085440",
+    "entityTableName": "test_node",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

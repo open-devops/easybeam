@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170524041236_added_entity_TenantGroup.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170524041237_added_entity_TenantUser.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170524041238_added_entity_TenantRole.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170524041239_added_entity_TenantPolicy.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170524041240_added_entity_TenantPermission.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170524041241_added_entity_Project.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170524041242_added_entity_ProjectAuthorityByGroup.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170524041243_added_entity_ProjectAuthorityByUser.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20170524041236_added_entity_constraints_TenantGroup.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170524041237_added_entity_constraints_TenantUser.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170524041238_added_entity_constraints_TenantRole.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170524041239_added_entity_constraints_TenantPolicy.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170524041241_added_entity_constraints_Project.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170524041242_added_entity_constraints_ProjectAuthorityByGroup.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170524041243_added_entity_constraints_ProjectAuthorityByUser.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>

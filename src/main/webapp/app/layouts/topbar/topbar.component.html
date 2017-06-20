@@ -1,0 +1,38 @@
+<!-- Language Menu Items -->
+<md-menu #languageMenu="mdMenu" xPosition="before" yPosition="below" [overlapTrigger]="false">
+    <button md-menu-item *ngFor="let language of languages" (click)="changeLanguage(language);">
+        {{language | findLanguageFromKey}}
+    </button>
+</md-menu>
+<!-- Account Menu Items -->
+<md-menu #accountMenu="mdMenu" xPosition="before" yPosition="below" [overlapTrigger]="true">
+    <td-menu>
+        <!-- Account Menu Sub Header -->
+        <div td-menu-header class="md-subhead" jhiTranslate="global.menu.account.main">Account</div>
+        <md-nav-list dense>
+            <!-- Sign in Menu Item -->
+            <a md-list-item (click)="login()">
+                <md-icon md-list-avatar>person</md-icon>
+                <h4 md-line>
+                    <span jhiTranslate="global.menu.account.login">Sign in</span>
+                </h4>
+            </a>
+            <md-divider></md-divider>
+            <!-- Sign up Menu Item -->
+            <a md-list-item routerLink="register">
+                <md-icon md-list-avatar>person_add</md-icon>
+                <h4 md-line>
+                    <span jhiTranslate="global.menu.account.register">Sign up</span>
+                </h4>
+            </a>
+        </md-nav-list>
+    </td-menu>
+</md-menu>
+<!-- Language Menu Bar -->
+<button md-icon-button [mdMenuTriggerFor]="languageMenu" *ngIf="languages">
+    <md-icon>language</md-icon>
+</button>
+<!-- Account Menu Bar -->
+<button md-icon-button [mdMenuTriggerFor]="accountMenu">
+    <md-icon>account_circle</md-icon>
+</button>

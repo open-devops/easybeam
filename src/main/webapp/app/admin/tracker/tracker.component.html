@@ -1,0 +1,31 @@
+<md-card>
+    <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
+        <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
+            <span class="md-title" jhiTranslate="tracker.title">Real-time user activities</span>
+        </span>
+        <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="{{'global.form.search.placeholder' | translate}}" (searchDebounce)="search($event)" flex>
+        </td-search-box>
+    </div>
+    <md-divider></md-divider>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th jhiTranslate="tracker.table.userlogin">User</th>
+                    <th jhiTranslate="tracker.table.ipaddress">IP Address</th>
+                    <th jhiTranslate="tracker.table.page">Current page</th>
+                    <th jhiTranslate="tracker.table.time">Time</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let activity of activities">
+                    <td>{{activity.userLogin}}</td>
+                    <td>{{activity.ipAddress}}</td>
+                    <td>{{activity.page}}</td>
+                    <td>{{activity.time}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</md-card>

@@ -1,0 +1,252 @@
+{
+    "global": {
+        "title": "E-TEST",
+        "browsehappy": "您目前使用<strong>过于老旧</strong>的浏览器, 建议您<a href=\"http://browsehappy.com/?locale=en\">升级浏览器</a>让您有更佳的上网体验.",
+        "menu": {
+            "home": "首页",
+            "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
+            "entities": {
+                "main": "数据",
+                "tenantGroup": "Tenant Group",
+                "tenantUser": "Tenant User",
+                "tenantRole": "Tenant Role",
+                "tenantPolicy": "Tenant Policy",
+                "tenantPermission": "Tenant Permission",
+                "project": "Project",
+                "projectAuthorityByGroup": "Project Authority By Group",
+                "projectAuthorityByUser": "Project Authority By User",
+                "requirementSet": "Requirement Set",
+                "requirement": "Requirement",
+                "testScenario": "Test Scenario",
+                "testCase": "Test Case",
+                "testParameterDefinition": "Test Parameter Definition",
+                "testParameterInstance": "Test Parameter Instance",
+                "testStep": "Test Step",
+                "testStepAction": "Test Step Action",
+                "testComponent": "Test Component",
+                "testScript": "Test Script",
+                "testRepository": "Test Repository",
+                "testRepositoryModule": "Test Repository Module",
+                "screenObject": "Screen Object",
+                "screenElementObject": "Screen Element Object",
+                "objectLocalization": "Object Localization",
+                "objectIdentification": "Object Identification",
+                "objectSynchronization": "Object Synchronization",
+                "objectProperty": "Object Property",
+                "functionLibrary": "Function Library",
+                "testFunction": "Test Function",
+                "testDataPattern": "Test Data Pattern",
+                "testStepData": "Test Step Data",
+                "testScreenInputData": "Test Screen Input Data",
+                "testCheckPoint": "Test Check Point",
+                "testComponentData": "Test Component Data",
+                "tableTemplate": "Table Template",
+                "tableColumnTemplate": "Table Column Template",
+                "testExecutionSet": "Test Execution Set",
+                "testExecutionEnviroment": "Test Execution Enviroment",
+                "testExecutionScenario": "Test Execution Scenario",
+                "testOperationSystem": "Test Operation System",
+                "testWebBrowser": "Test Web Browser",
+                "testExecutionSchedule": "Test Execution Schedule",
+                "testExecutionHistory": "Test Execution History",
+                "testScenarioResult": "Test Scenario Result",
+                "testCaseResult": "Test Case Result",
+                "testStepResult": "Test Step Result",
+                "testStepItemResult": "Test Step Item Result",
+                "testNode": "Test Node",
+                "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+            },
+            "account": {
+                "main": "账号",
+                "settings": "设置",
+                "password": "密码",
+                "sessions": "会话",
+                "login": "登录",
+                "logout": "退出",
+                "register": "注册"
+            },
+            "admin": {
+                "main": "管理",
+                "userManagement": "用户管理",
+                "tracker": "追踪使用者",
+                "metrics": "资源监控",
+                "health": "服务状态",
+                "configuration": "配置",
+                "logs": "日志",
+                "audits": "审核",
+                "apidocs": "API",
+                "database": "数据库",
+                "jhipster-needle-menu-add-admin-element": "JHipster will add additional menu entries here (do not translate!)"
+            },
+            "language": "语言"
+        },
+        "sidebar": {
+            "main": "控制台",
+            "switch": "选择项目",
+            "dashboard": {
+                "main": "项目仪表盘"
+            },
+            "project-mgr": {
+                "main": "项目管理",
+                "menu": {
+                    "admmin": "管理者菜单",
+                    "projects": "项目",
+                    "requirements": "需求",
+                    "assignments": "用户授权",
+                    "groups": "用户组",
+                    "users": "用户",
+                    "roles": "角色"
+                }
+            },
+            "require-mgr": {
+                "main": "需求管理",
+                "menu": {
+                    "admmin": "管理者菜单",
+                    "epics": "史诗故事",
+                    "stories": "用户故事",
+                    "tasks": "任务",
+                    "dashboard": "仪表盘"
+                }
+            },
+            "library-mgr": {
+                "main": "对象库管理"
+            },
+            "design-mgr": {
+                "main": "测试设计管理",
+                "menu": {
+                    "admmin": "管理者菜单",
+                    "test-cases": "测试用例",
+                    "test-scenarios": "测试场景",
+                    "test-components": "测试组件"
+                }
+            },
+            "run-mgr": {
+                "main": "测试运行管理"
+            }
+        },
+        "form": {
+            "username": "登录账号",
+            "username.placeholder": "您的登录账号",
+            "firstname": "名",
+            "firstname.placeholder": "您的名字",
+            "lastname": "姓",
+            "lastname.placeholder": "您的姓氏",
+            "language": "语言",
+            "newpassword": "新密码",
+            "newpassword.placeholder": "您的新密码",
+            "confirmpassword": "新密码确认",
+            "confirmpassword.placeholder": "确认您的新密码",
+            "email": "电子邮件",
+            "email.placeholder": "您的电子邮件",
+            "search.placeholder": "查询关键字",
+            "chips.placeholder": "输入后按回车键"
+        },
+        "messages": {
+            "info": {
+                "authenticated": {
+                    "prefix": "如果您要",
+                    "link": "登录",
+                    "suffix": ", 您可以使用默认账号:<br/>- 管理员 (账号=\"admin\"和密码=\"admin\") <br/>- 普通用户 (账号=\"user\"和密码=\"user\")."
+                },
+                "register": {
+                    "link": "注册"
+                }
+            },
+            "error": {
+                "dontmatch": "您输入的密码和确认密码不匹配!"
+            },
+            "validate": {
+                "firstname": {
+                    "required": "您的名字是必填项.",
+                    "minlength": "您的名字长度至少要有1个字符",
+                    "maxlength": "您的名字长度不能超过50个字符"
+                },
+                "lastname": {
+                    "required": "您的姓氏是必填项.",
+                    "minlength": "您的姓氏长度至少要有1个字符",
+                    "maxlength": "您的姓氏长度不能超过50个字符"
+                },
+                "newpassword": {
+                    "required": "您的密码是必填项.",
+                    "minlength": "您的密码长度至少要有5个字符",
+                    "maxlength": "您的密码长度不能超过50个字符",
+                    "strength": "密码强度:"
+                },
+                "confirmpassword": {
+                    "required": "您的确认密码是必填项.",
+                    "minlength": "您的确认密码长度至少要有5个字符",
+                    "maxlength": "您的确认密码长度不能超过50个字符"
+                },
+                "email": {
+                    "required": "您的电子邮件是必填项.",
+                    "invalid": "您的电子邮件格式格式不正确.",
+                    "minlength": "您的电子邮件长度至少要有5个字符",
+                    "maxlength": "您的电子邮件长度不能超过50个字符"
+                }
+            }
+        },
+        "field": {
+            "id": "ID"
+        },
+        "ribbon": {
+            "dev": "Development"
+        }
+    },
+    "entity": {
+        "list": {
+            "noResult": "没有数据",
+            "rowPerPage": "每页显示:"
+        },
+        "action": {
+            "title": "操作",
+            "addblob": "增加 BLOB",
+            "addimage": "增加图片",
+            "back": "返回",
+            "cancel": "取消",
+            "delete": "删除",
+            "deleteAll": "全部删除",
+            "edit": "编辑",
+            "open": "打开",
+            "save": "保存",
+            "copy": "拷贝",
+            "view": "查看",
+            "selectAll": "全选",
+            "import": {
+                "step": "导入测试步骤",
+                "component": "导入测试组件"
+            }
+        },
+        "detail": {
+            "field": "字段",
+            "value": "值"
+        },
+        "delete": {
+            "title": "确认删除",
+            "accept": "好，请删除",
+            "cancel": "不，请取消"
+        },
+        "validation": {
+            "required": "本字段不能为空.",
+            "minlength": "本字段最短长度为 {{min}} 个字符.",
+            "maxlength": "本字段最大长度为 {{max}} 个字符.",
+            "min": "本字段不能小于 {{min}}.",
+            "max": "本字段不能大于 {{max}}.",
+            "minbytes": "本字段不少于 {{min}} 字符.",
+            "maxbytes": "本字段不多余 {{max}} 字符.",
+            "pattern": "本字段必须符合模式 {{pattern}}.",
+            "number": "本字段必须为数字.",
+            "datetimelocal": "本字段必须为日期和时间."
+        }
+    },
+    "error": {
+        "internalServerError": "Internal server error",
+        "server.not.reachable": "服务器无法访问",
+        "url.not.found": "Not found",
+        "NotNull": "域 {{fieldName}} 不能为空!",
+        "Size": "域 {{fieldName}} 不满足最大/最小值限制!",
+        "userexists": "该用户名已存在!",
+        "emailexists": "该邮箱已被使用!",
+        "idexists": "新建的 {{entityName}} 不能包含ID"
+    },
+    "footer": "Copyright &copy; 2017 Test Foundry."
+}

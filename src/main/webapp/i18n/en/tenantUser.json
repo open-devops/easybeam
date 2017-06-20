@@ -1,0 +1,21 @@
+{
+    "easybeam": {
+        "tenantUser": {
+            "home": {
+                "toolbar": "Manage Users",
+                "title": "User List",
+                "createLabel": "Create a new User",
+                "createOrEditLabel": "Create or edit a User"
+            },
+            "created": "A new User is created with identifier {{ name }}",
+            "updated": "A User is updated with identifier {{ name }}",
+            "deleted": "A User is deleted with identifier {{ name }}",
+            "delete": {
+                "question": "Are you sure you want to delete User - {{ name }}?"
+            },
+            "detail": {
+                "title": "User Form"
+            }
+        }
+    }
+}

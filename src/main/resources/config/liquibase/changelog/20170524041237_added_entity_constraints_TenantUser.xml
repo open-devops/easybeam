@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity TenantUser.
+    -->
+    <changeSet id="20170524041237-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="account_id"
+                                 baseTableName="tenant_user"
+                                 constraintName="fk_tenant_user_account_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="tenant_users_id"
+                                 baseTableName="tenant_user_groups"
+                                 constraintName="fk_tenant_user_groups_tenant_users_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tenant_user"/>
+        <addForeignKeyConstraint baseColumnNames="groups_id"
+                                 baseTableName="tenant_user_groups"
+                                 constraintName="fk_tenant_user_groups_groups_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tenant_group"/>
+        
+        <addForeignKeyConstraint baseColumnNames="tenant_users_id"
+                                 baseTableName="tenant_user_roles"
+                                 constraintName="fk_tenant_user_roles_tenant_users_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tenant_user"/>
+        <addForeignKeyConstraint baseColumnNames="roles_id"
+                                 baseTableName="tenant_user_roles"
+                                 constraintName="fk_tenant_user_roles_roles_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tenant_role"/>
+        
+    </changeSet>
+</databaseChangeLog>

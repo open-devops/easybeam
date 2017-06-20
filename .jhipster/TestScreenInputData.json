@@ -1,0 +1,63 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "screenElementObject",
+            "otherEntityName": "screenElementObject",
+            "otherEntityField": "name",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "testScreenInputData"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "parameters",
+            "otherEntityName": "testParameterInstance",
+            "otherEntityField": "name",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "testStepData",
+            "otherEntityName": "testStepData",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "javadoc": "名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "inputMethod",
+            "javadoc": "数据输入处理方式",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "inputData",
+            "javadoc": "输入数据 - 默认输入方式时的输入数据",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "inputDataType",
+            "javadoc": "输入数据类型",
+            "fieldType": "TestScreenInputDataType",
+            "fieldValues": "CONSTANT,PARAMETER,FUNCTION"
+        },
+        {
+            "fieldName": "description",
+            "javadoc": "说明",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170502085424",
+    "entityTableName": "test_screen_input_data",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

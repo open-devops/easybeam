@@ -1,0 +1,158 @@
+<ng-template tdLoading [tdLoadingUntil]="!isSaving" tdLoadingStrategy="overlay">
+    <md-card>
+        <md-card-title>
+            <span jhiTranslate="easybeam.tenantUser.detail.title">User</span>
+        </md-card-title>
+        <md-card-subtitle *ngIf="editable">
+            <span jhiTranslate="easybeam.tenantUser.home.createOrEditLabel">Create or edit a User</span>
+        </md-card-subtitle>
+        <jhi-alert-error></jhi-alert-error>
+        <td-message #msgDoNotMatch *ngIf="doNotMatch" label="{{'global.messages.error.dontmatch' | translate}}" color="warn" icon="error">
+            <button td-message-actions md-icon-button (click)="doNotMatch = false"><md-icon>cancel</md-icon></button>
+        </td-message>
+        <md-divider></md-divider>
+        <md-card-content class="push-bottom-none">
+            <form #tenantUserForm="ngForm">
+                <fieldset [disabled]="!editable">
+                    <!-- Username -->
+                    <div layout="row">
+                        <md-input-container flex>
+                            <input mdInput #login #loginControl="ngModel" type="text" placeholder="{{'global.form.username' | translate}}" [(ngModel)]="tenantUser.login" id="login" name="login" required minlength=1 maxlength=50 pattern="^[_'.@a-z0-9-]*$">
+                            <md-hint align="start">
+                                <span [hidden]="loginControl.pristine || !loginControl.errors?.required" class="tc-red-600" jhiTranslate="global.message.validate.login.required">
+                                    Your username is required.
+                                </span>
+                                <span [hidden]="loginControl.pristine || !loginControl.errors?.minlength" class="tc-red-600" jhiTranslate="global.messages.validate.login.minlength">
+                                    Your username is required to be at least 1 character.
+                                </span>
+                                <span [hidden]="loginControl.pristine || !loginControl.errors?.maxlength" class="tc-red-600" jhiTranslate="global.messages.validate.login.maxlength">
+                                    Your username cannot be longer than 50 characters.
+                                </span>
+                                <span [hidden]="loginControl.pristine || !loginControl.errors?.pattern" class="tc-red-600" jhiTranslate="global.messages.validate.login.pattern">
+                                    Your username can only contain lower-case letters and digits.
+                                </span>
+                            </md-hint>
+                            <md-hint align="end">{{login.value.length}} / 50</md-hint>
+                        </md-input-container>
+                    </div>
+                    <!-- Last Name -->
+                    <div layout="row" class="push-top">
+                        <md-input-container flex>
+                            <input mdInput #lastName #lastNameControl="ngModel" type="text" placeholder="{{'global.form.lastname' | translate}}" [(ngModel)]="tenantUser.lastName" id="lastName" name="lastName" required minlength=1 maxlength=50>
+                            <md-hint align="start">
+                                <span [hidden]="lastNameControl.pristine || !lastNameControl.errors?.required" class="tc-red-600" jhiTranslate="global.messages.validate.lastname.required">
+                                            Your last name is required.
+                                        </span>
+                                <span [hidden]="lastNameControl.pristine || !lastNameControl.errors?.minlength" class="tc-red-600" jhiTranslate="global.messages.validate.lastname.minlength">
+                                            Your last name is required to be at least 1 character.
+                                        </span>
+                                <span [hidden]="lastNameControl.pristine || !lastNameControl.errors?.maxlength" class="tc-red-600" jhiTranslate="global.messages.validate.lastname.maxlength">
+                                            Your last name cannot be longer than 50 characters.
+                                        </span>
+                            </md-hint>
+                            <md-hint align="end">{{lastName.value.length}} / 50</md-hint>
+                        </md-input-container>
+                    </div>
+                    <!-- First Name -->
+                    <div layout="row" class="push-top">
+                        <md-input-container flex>
+                            <input mdInput #firstName #firstNameControl="ngModel" type="text" placeholder="{{'global.form.firstname' | translate}}" [(ngModel)]="tenantUser.firstName" id="firstName" name="firstName" required minlength=1 maxlength=50>
+                            <md-hint align="start">
+                                <span [hidden]="firstNameControl.pristine || !firstNameControl.errors?.required" class="tc-red-600" jhiTranslate="global.messages.validate.firstname.required">
+                                Your first name is required.
+                            </span>
+                                <span [hidden]="firstNameControl.pristine || !firstNameControl.errors?.minlength" class="tc-red-600" jhiTranslate="global.messages.validate.firstname.minlength">
+                                Your first name is required to be at least 1 character.
+                            </span>
+                                <span [hidden]="firstNameControl.pristine || !firstNameControl.errors?.maxlength" class="tc-red-600" jhiTranslate="global.messages.validate.firstname.maxlength">
+                                Your first name cannot be longer than 50 characters.
+                            </span>
+                            </md-hint>
+                            <md-hint align="end">{{firstName.value.length}} / 50</md-hint>
+                        </md-input-container>
+                    </div>
+                    <!-- Email -->
+                    <div layout="row" class="push-top">
+                        <md-input-container flex>
+                            <input mdInput #email #emailControl="ngModel" type="email" placeholder="{{'global.form.email' | translate}}" [(ngModel)]="tenantUser.email" id="email" name="email" required minlength=5 maxlength=100 pattern="^[a-zA-Z0-9]+(\.[_a-zA-Z0-9]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,15})$">
+                            <md-hint align="start">
+                                <span [hidden]="emailControl.pristine || !emailControl.errors?.required" class="tc-red-600" jhiTranslate="global.messages.validate.email.required">
+                                Your email is required.
+                            </span>
+                                <span [hidden]="emailControl.pristine || !emailControl.errors?.invalid" class="tc-red-600" jhiTranslate="global.messages.validate.email.invalid">
+                                Your email is invalid.
+                            </span>
+                                <span [hidden]="emailControl.pristine || !emailControl.errors?.pattern" class="tc-red-600" jhiTranslate="global.messages.validate.email.invalid">
+                                Your email is invalid.
+                            </span>
+                                <span [hidden]="emailControl.pristine || !emailControl.errors?.minlength" class="tc-red-600" jhiTranslate="global.messages.validate.email.minlength">
+                                Your email is required to be at least 5 characters.
+                            </span>
+                                <span [hidden]="emailControl.pristine || !emailControl.errors?.maxlength" class="tc-red-600" jhiTranslate="global.messages.validate.email.maxlength">
+                                Your email cannot be longer than 100 characters.
+                            </span>
+                            </md-hint>
+                            <md-hint align="end">{{email.value.length}} / 100</md-hint>
+                        </md-input-container>
+                    </div>
+                    <!-- Language -->
+                    <div layout="row" class="push-top push-right" *ngIf="languages && languages.length > 0">
+                        <md-select flex="50" placeholder="{{'global.form.language' | translate}}" id="langKey" name="langKey" [(ngModel)]="tenantUser.langKey" [disabled]="!editable" flex>
+                            <md-option *ngFor="let language of languages" [value]="language">{{language | findLanguageFromKey}}</md-option>
+                        </md-select>
+                    </div>
+                    <!-- New password -->
+                    <div layout="row" class="push-top">
+                        <md-input-container flex>
+                            <input mdInput #password #passwordControl="ngModel" type="password" placeholder="{{'global.form.newpassword' | translate}}" [(ngModel)]="tenantUser.password" id="password" name="password" required minlength=4 maxlength=50>
+                            <md-hint align="start">
+                                <span [hidden]="passwordControl.pristine || !passwordControl.errors?.required" class="tc-red-600" jhiTranslate="global.messages.validate.newpassword.required">
+                                Your password is required.
+                            </span>
+                                <span [hidden]="passwordControl.pristine || !passwordControl.errors?.minlength" class="tc-red-600" jhiTranslate="global.messages.validate.newpassword.minlength">
+                                Your password is required to be at least 4 characters.
+                            </span>
+                                <span [hidden]="passwordControl.pristine || !passwordControl.errors?.maxlength" class="tc-red-600" jhiTranslate="global.messages.validate.newpassword.maxlength">
+                                Your password cannot be longer than 50 characters.
+                            </span>
+                            </md-hint>
+                            <md-hint align="end">
+                                <jhi-password-strength-bar [passwordToCheck]="tenantUser.password"></jhi-password-strength-bar>
+                            </md-hint>
+                        </md-input-container>
+                    </div>
+                    <!-- New password confirmation -->
+                    <div layout="row" class="push-top">
+                        <md-input-container flex>
+                            <input mdInput #confirmPasswordInput #confirmPasswordControl="ngModel" type="password" placeholder="{{'global.form.confirmpassword' | translate}}" [(ngModel)]="confirmPassword" id="confirmPassword" name="confirmPassword" required minlength=4 maxlength=50>
+                            <md-hint align="start">
+                                <span [hidden]="confirmPasswordControl.pristine || !confirmPasswordControl.errors?.required" class="tc-red-600" jhiTranslate="global.messages.validate.confirmpassword.required">
+                                Your confirmation password is required.
+                            </span>
+                                <span [hidden]="confirmPasswordControl.pristine || !confirmPasswordControl.errors?.minlength" class="tc-red-600" jhiTranslate="global.messages.validate.confirmpassword.minlength">
+                                Your confirmation password is required to be at least 4 characters.
+                            </span>
+                                <span [hidden]="confirmPasswordControl.pristine || !confirmPasswordControl.errors?.maxlength" class="tc-red-600" jhiTranslate="global.messages.validate.confirmpassword.maxlength">
+                                Your confirmation password cannot be longer than 50 characters.
+                            </span>
+                            </md-hint>
+                            <md-hint align="end">{{confirmPasswordInput.value.length}} / {{password.value.length}}</md-hint>
+                        </md-input-container>
+                    </div>
+                </fieldset>
+            </form>
+        </md-card-content>
+        <md-divider></md-divider>
+        <md-card-actions>
+            <button md-button [disabled]="!tenantUserForm.valid" color="primary" (click)="save()" *ngIf="editable">
+                <md-icon>save</md-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+            </button>
+            <button md-button (click)="goBack()" *ngIf="editable">
+                <md-icon>cancel</md-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+            </button>
+            <button md-button (click)="goBack()" *ngIf="!editable">
+                <md-icon>arrow_back</md-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+        </md-card-actions>
+    </md-card>
+</ng-template>

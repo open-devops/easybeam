@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "elementObjectName",
+            "javadoc": "名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "strategy",
+            "javadoc": "名称",
+            "fieldType": "SynchronizationStrategy",
+            "fieldValues": "BLANK,WAIT_FOR_TEXT_PRESENT,WAIT_FOR_TEXT_NOT_PRESENT,WAIT_FOR_OBJECT_DISPLAY,WAIT_FOR_OBJECT_HIDDEN,WAIT_FOR_OBJECT_ENABLE,WAIT_FOR_OBJECT_DISABLE,WAIT_FOR_OBJECT_PROPERTY_CHANGE,IMPLICITLY_WAIT,COMPOSIT_CONDITION",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "waitForObjectId",
+            "javadoc": "同步对象的标识符",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "waitForProperty",
+            "javadoc": "同步对象的同步属性名称\t同步方式为ＷaitForObjectAttributeChange时，需要设定。",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "waitForValue",
+            "javadoc": "同步期待值",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "timeout",
+            "javadoc": "同步超时时间(毫秒)",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170502085418",
+    "entityTableName": "object_synchronization",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

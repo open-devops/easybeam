@@ -1,0 +1,52 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "category",
+            "javadoc": "分类",
+            "fieldType": "TestParameterCategory",
+            "fieldValues": "INPUT,OUTPUT",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "javadoc": "参数名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "type",
+            "javadoc": "参数类型",
+            "fieldType": "VariableType",
+            "fieldValues": "TYPE_STRING,TYPE_INTEGER,TYPE_LONG,TYPE_BIGDECIMAL,TYPE_FLOAT,TYPE_DOUBLE,TYPE_ENUM,TYPE_BOOLEAN,TYPE_DATE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "defaultValue",
+            "javadoc": "默认值",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "validatePattern",
+            "javadoc": "有效验证",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "javadoc": "说明",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170502085406",
+    "entityTableName": "test_parameter_definition",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

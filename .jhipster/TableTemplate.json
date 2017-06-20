@@ -1,0 +1,51 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "tableColumnTemplates",
+            "otherEntityName": "tableColumnTemplate",
+            "otherEntityRelationshipName": "tableTemplate"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "javadoc": "名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "javadoc": "说明",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "headerStartRow",
+            "javadoc": "表头开始行位置。从１开始计数",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "headerRowSpan",
+            "javadoc": "表头行数",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dataStartRow",
+            "javadoc": "数据开始行位置。从１开始计数",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dataRowSpan",
+            "javadoc": "每条数据纪录所占行数",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170502085427",
+    "entityTableName": "table_template",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

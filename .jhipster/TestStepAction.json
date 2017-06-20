@@ -1,0 +1,54 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "javadoc": "名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "startScreenObjectName",
+            "javadoc": "测试步骤起始画面的对象(数据输入画面)",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "endScreenObjectName",
+            "javadoc": "测试步骤结束画面的对象(数据验证画面)",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sourceControlObjectName",
+            "javadoc": "动作事件的发生源对象",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "action",
+            "javadoc": "动作事件的名称",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "waitAfterAction",
+            "javadoc": "动作后等待时间（单位毫秒）",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "waitAfterStep",
+            "javadoc": "步骤后等待时间（单位毫秒）",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "description",
+            "javadoc": "说明",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170502085409",
+    "entityTableName": "test_step_action",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

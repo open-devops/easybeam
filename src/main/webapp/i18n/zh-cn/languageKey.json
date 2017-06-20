@@ -1,0 +1,10 @@
+{
+    "easybeam": {
+        "LanguageKey" : {
+            "null": "",
+            "ENGLISH": "ENGLISH",
+            "CHINESE": "CHINESE",
+            "JAPANESE": "JAPANESE"
+        }
+    }
+}

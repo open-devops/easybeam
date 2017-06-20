@@ -1,0 +1,24 @@
+{
+    "easybeam": {
+        "projectAuthorityByUser" : {
+            "home": {
+                "title": "ProjectAuthorityByUsers",
+                "createLabel": "Project Authority By User を追加",
+                "createOrEditLabel": "Project Authority By Userを追加または編集"
+            },
+            "created": "A new Project Authority By User is created with identifier {{ param }}",
+            "updated": "A Project Authority By User is updated with identifier {{ param }}",
+            "deleted": "A Project Authority By User is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Project Authority By User {{ id }}を削除してもよろしいですか？"
+            },
+            "detail": {
+                "title": "Project Authority By User"
+            },
+            "description": "Description",
+            "user": "User",
+            "role": "Role",
+            "project": "Project"
+        }
+    }
+}

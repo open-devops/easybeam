@@ -1,0 +1,25 @@
+{
+    "easybeam": {
+        "tenantGroup": {
+            "home": {
+                "toolbar": "Manage Groups",
+                "title": "Group List",
+                "createLabel": "Create a new Group",
+                "createOrEditLabel": "Create or edit a Group"
+            },
+            "created": "A new Group is created with identifier {{ name }}",
+            "updated": "A Group is updated with identifier {{ name }}",
+            "deleted": "A Group is deleted with identifier {{ name }}",
+            "delete": {
+                "question": "Are you sure you want to delete Group - {{ name }}?"
+            },
+            "detail": {
+                "title": "Group Form"
+            },
+            "name": "Name",
+            "description": "Description",
+            "roles": "Roles",
+            "users": "Users"
+        }
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "testComponentDatas",
+            "otherEntityName": "testComponentData",
+            "otherEntityRelationshipName": "testDataPattern"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "testStepDatas",
+            "otherEntityName": "testStepData",
+            "otherEntityRelationshipName": "testDataPattern"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "parameters",
+            "otherEntityName": "testParameterInstance",
+            "otherEntityField": "name",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "testCase",
+            "otherEntityName": "testCase",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "javadoc": "名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "javadoc": "说明",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170502085422",
+    "entityTableName": "test_data_pattern",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

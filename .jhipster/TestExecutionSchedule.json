@@ -1,0 +1,62 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "testExecutionHistories",
+            "otherEntityName": "testExecutionHistory",
+            "otherEntityRelationshipName": "testExecutionSchedule"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "testExecutionSet",
+            "otherEntityName": "testExecutionSet",
+            "otherEntityField": "name",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "project",
+            "otherEntityName": "project",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "javadoc": "名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "javadoc": "说明",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "javadoc": "执行状态",
+            "fieldType": "TestExecutionStatus",
+            "fieldValues": "IN_PLAN,EXECUTED,CANCELED,CLOSED"
+        },
+        {
+            "fieldName": "strategy",
+            "javadoc": "执行模式",
+            "fieldType": "TestExecutionStrategy",
+            "fieldValues": "TIMER_DRIVEN,CRON_DRIVEN"
+        },
+        {
+            "fieldName": "executionSchedule",
+            "javadoc": "循环模式",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170502085434",
+    "entityTableName": "test_execution_schedule",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

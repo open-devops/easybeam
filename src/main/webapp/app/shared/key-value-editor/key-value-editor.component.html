@@ -1,0 +1,62 @@
+<form #keyValueEditor="ngForm" novalidate *ngIf="entries" class="push">
+    <div *ngIf="showHeader" class="editor-header" layout="row" flex>
+        <div flex="30">
+            <span>{{keyPlaceholder}}</span>
+        </div>
+        <div flex>
+            <span>{{valuePlaceholder}}</span>
+        </div>
+        <div flex="20">
+        </div>
+    </div>
+    <div class="ngx-dnd-container">
+        <div *ngFor="let entry of entries; let index = index; let last = last" layout="column">
+            <div class="editor-row" layout="row" layout-fill>
+                <!-- The name/key block -->
+                <div flex="30">
+                    <md-input-container layout="row">
+                        <input
+                            mdInput
+                            type="text"
+                            [id]="uniqueForKey(index)"
+                            [name]="uniqueForKey(index)"
+                            [(ngModel)]="entry.name"
+                            [readonly]="isReadonly || isReadonlyKey || entry.isReadonlyKey || entry.isReadonly"
+                            [required]="!allowEmptyKeys && entry.value"
+                            [pattern]="keyValidator"
+                            [minlength]="keyMinlength"
+                            [maxlength]="keyMaxlength"
+                            flex>
+                    </md-input-container>
+                </div>
+                <!-- the value block -->
+                <div flex>
+                    <md-input-container layout="row" layout-fill>
+                        <input
+                            mdInput
+                            type="text"
+                            [id]="uniqueForValue(index)"
+                            [name]="uniqueForValue(index)"
+                            [(ngModel)]="entry.value"
+                            [readonly]="isReadonly || entry.isReadonly"
+                            [required]="!allowEmptyKeys && entry.value"
+                            [pattern]="valueValidator"
+                            [minlength]="valueMinlength"
+                            [maxlength]="valueMaxlength"
+                            flex>
+                    </md-input-container>
+                </div>
+                <!-- the action block -->
+                <div class="push-left" layout="row" layout-nowrap layout-align="end center">
+                    <button class="push-none" md-button md-icon-button [disabled]="cannotAdd || entry.cannotAdd" (click)="onAddRow(index)">
+                        <md-icon>add_circle</md-icon>
+                    </button>
+                    <button class="push-none" md-button md-icon-button [disabled]="cannotDelete || entry.cannotDelete" (click)="deleteEntry(index, 1)">
+                        <md-icon>delete</md-icon>
+                    </button>
+                    <ng-content select="[key-value-editor-actions]"></ng-content>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

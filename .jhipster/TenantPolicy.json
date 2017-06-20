@@ -1,0 +1,45 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "policies",
+            "relationshipName": "permissions",
+            "otherEntityName": "tenantPermission",
+            "otherEntityField": "name",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "roles",
+            "otherEntityName": "tenantRole",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "policies"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "PolicyType",
+            "fieldValues": "PLATFORM_MANAGED,CUSTOMER_MANAGED"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170502085357",
+    "entityTableName": "tenant_policy",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

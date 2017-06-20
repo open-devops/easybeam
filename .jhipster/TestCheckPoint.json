@@ -1,0 +1,68 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "screenElementObject",
+            "otherEntityName": "screenElementObject",
+            "otherEntityField": "name",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "testCheckPoint"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "parameters",
+            "otherEntityName": "testParameterInstance",
+            "otherEntityField": "name",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "testStepData",
+            "otherEntityName": "testStepData",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "javadoc": "名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "assertType",
+            "javadoc": "期待结果类型",
+            "fieldType": "TestCheckPointAssertType",
+            "fieldValues": "EXIST,PROPERTY,VISIABLE"
+        },
+        {
+            "fieldName": "assertProperty",
+            "javadoc": "验证目标属性 - 期待结果类型为属性验证时设定",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "assertOperator",
+            "javadoc": "验证操作符 - 期待结果类型为属性验证时设定",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "expectedValue",
+            "javadoc": "期待值 - 期待结果类型为属性验证时设定",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "javadoc": "说明",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170502085425",
+    "entityTableName": "test_check_point",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

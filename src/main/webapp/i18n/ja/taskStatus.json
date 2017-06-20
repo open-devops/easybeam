@@ -1,0 +1,13 @@
+{
+    "easybeam": {
+        "TaskStatus" : {
+            "null": "",
+            "NEW": "NEW",
+            "READY": "READY",
+            "IN_PROCESS": "IN_PROCESS",
+            "READY_FOR_TEST": "READY_FOR_TEST",
+            "DONE": "DONE",
+            "ARCHIVED": "ARCHIVED"
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "easybeam": {
+        "projectAuthorityByUser" : {
+            "home": {
+                "title": "Project Authority By Users",
+                "createLabel": "Create a new Project Authority By User",
+                "createOrEditLabel": "Create or edit a Project Authority By User"
+            },
+            "created": "A new Project Authority By User is created with identifier {{ param }}",
+            "updated": "A Project Authority By User is updated with identifier {{ param }}",
+            "deleted": "A Project Authority By User is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Project Authority By User {{ id }}?"
+            },
+            "detail": {
+                "title": "Project Authority By User"
+            },
+            "description": "Description",
+            "user": "User",
+            "role": "Role",
+            "project": "Project"
+        }
+    }
+}

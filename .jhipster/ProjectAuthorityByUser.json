@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "user",
+            "otherEntityName": "tenantUser",
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "projectAuthorityByUser"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "role",
+            "otherEntityName": "tenantRole",
+            "otherEntityField": "name",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "projectAuthorityByUser"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "project",
+            "otherEntityName": "project",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170502085401",
+    "entityTableName": "project_authority_by_user",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

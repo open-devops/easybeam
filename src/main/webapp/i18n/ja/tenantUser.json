@@ -1,0 +1,21 @@
+{
+    "easybeam": {
+        "tenantUser": {
+            "home": {
+                "toolbar": "ユーザー管理",
+                "title": "ユーザーリスト",
+                "createLabel": "ユーザーを追加",
+                "createOrEditLabel": "ユーザーを追加または編集"
+            },
+            "created": "ユーザー {{ name }} が作成されました。",
+            "updated": "ユーザー {{ name }} が更新されました。",
+            "deleted": "ユーザー {{ name }} が削除されました。",
+            "delete": {
+                "question": "ユーザー {{ name }} を削除してもよろしいですか。"
+            },
+            "detail": {
+                "title": "ユーザーフォーム"
+            }
+        }
+    }
+}

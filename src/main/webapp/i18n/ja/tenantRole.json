@@ -1,0 +1,26 @@
+{
+    "easybeam": {
+        "tenantRole": {
+            "home": {
+                "toolbar": "ロール管理",
+                "title": "ロールリスト",
+                "createLabel": "ロールを追加",
+                "createOrEditLabel": "ロールを追加または編集"
+            },
+            "created": "ロール {{ name }} が作成されました。",
+            "updated": "ロール {{ name }} が更新されました。",
+            "deleted": "ロール {{ name }} が削除されました。",
+            "delete": {
+                "question": "ロール {{ name }} を削除してもよろしいですか。"
+            },
+            "detail": {
+                "title": "ロールフォーム"
+            },
+            "name": "ロール名",
+            "description": "説明",
+            "policies": "ポリシー",
+            "groups": "グループ",
+            "users": "ユーザー"
+        }
+    }
+}

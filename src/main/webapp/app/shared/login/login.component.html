@@ -1,0 +1,50 @@
+<ng-template tdLoading [tdLoadingUntil]="!processing" tdLoadingStrategy="overlay">
+    <div flex>
+        <md-card>
+            <md-card-title>
+                <md-card-title-text>
+                    <h3><span jhiTranslate="login.title">Sign in</span></h3>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-subtitle>
+                <div class="alert alert-danger" *ngIf="authenticationError" jhiTranslate="login.messages.error.authentication">
+                    <strong>Failed to sign in!</strong>
+                </div>
+            </md-card-subtitle>
+            <md-divider></md-divider>
+            <md-card-content class="push-bottom-none">
+                <form #loginForm="ngForm">
+                    <!-- Username -->
+                    <div layout="row">
+                        <md-input-container flex>
+                            <input mdInput #usernameInput #usernameControl="ngModel" type="text" placeholder="{{'global.form.username' | translate}}" [(ngModel)]="username" id="username" name="username" required maxlength=50>
+                        </md-input-container>
+                    </div>
+                    <!-- Password -->
+                    <div layout="row">
+                        <md-input-container flex>
+                            <input mdInput #passwordInput #passwordControl="ngModel" type="password" placeholder="{{'login.form.password' | translate}}" [(ngModel)]="password" id="password" name="password" required maxlength=50>
+                        </md-input-container>
+                    </div>
+                    <!-- Remember me -->
+                    <div layout="row">
+                        <md-checkbox [(ngModel)]="rememberMe" name="rememberMe" aria-labelledby="rememberMeMsg" flex>
+                            <span id="rememberMeMsg" jhiTranslate="login.form.rememberme">Remember me</span>&zwnj;
+                        </md-checkbox>
+                    </div>
+                </form>
+            </md-card-content>
+            <md-divider></md-divider>
+            <md-card-actions>
+                <div layout="row">
+                    <button md-button color="accent" [disabled]="loginForm.form.invalid" (click)="login()">
+                        <span jhiTranslate="login.form.button">Sign in</span>
+                    </button>
+                    <button md-button (click)="cancel()">
+                        <span jhiTranslate="entity.action.cancel">Cancel</span>
+                    </button>
+                </div>
+            </md-card-actions>
+        </md-card>
+    </div>
+</ng-template>

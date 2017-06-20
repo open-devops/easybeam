@@ -1,0 +1,36 @@
+<td-layout-manage-list #manageList [opened]="media.registerQuery('gt-sm') | async" [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'" [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
+    <md-toolbar td-sidenav-content>
+        <span jhiTranslate="global.sidebar.main">Console</span>
+    </md-toolbar>
+    <md-nav-list td-sidenav-content>
+        <a md-list-item md-ripple class="block relative" (click)="!media.query('gt-sm') && manageList.close()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:false}" [routerLink]="['/portal/project-mgr/projects']">
+            <md-icon md-list-icon>library_add</md-icon>
+            <span jhiTranslate="global.sidebar.project-mgr.menu.projects">Projects</span>
+        </a>
+        <h3 md-subheader>
+            <span jhiTranslate="global.sidebar.project-mgr.menu.admmin">Admin Menu</span>
+        </h3>
+        <a md-list-item md-ripple class="block relative" (click)="!media.query('gt-sm') && manageList.close()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:false}" [routerLink]="['/portal/project-mgr/assignments']">
+            <md-icon md-list-icon>assignment_ind</md-icon>
+            <span jhiTranslate="global.sidebar.project-mgr.menu.assignments">Assignments</span>
+        </a>
+        <a md-list-item md-ripple class="block relative" (click)="!media.query('gt-sm') && manageList.close()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:false}" [routerLink]="['/portal/project-mgr/groups']">
+            <md-icon md-list-icon>people</md-icon>
+            <span jhiTranslate="global.sidebar.project-mgr.menu.groups">Groups</span>
+        </a>
+        <a md-list-item md-ripple class="block relative" (click)="!media.query('gt-sm') && manageList.close()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:false}" [routerLink]="['/portal/project-mgr/users']">
+            <md-icon md-list-icon>person</md-icon>
+            <span jhiTranslate="global.sidebar.project-mgr.menu.users">Users</span>
+        </a>
+        <a md-list-item md-ripple class="block relative" (click)="!media.query('gt-sm') && manageList.close()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:false}" [routerLink]="['/portal/project-mgr/roles']">
+            <md-icon md-list-icon>school</md-icon>
+            <span jhiTranslate="global.sidebar.project-mgr.menu.roles">Roles</span>
+        </a>
+    </md-nav-list>
+    <div td-toolbar-content layout="row" layout-align="start center" flex>
+        <span>{{toolbarTitle}}</span>
+        <span flex></span>
+        <button md-icon-button><md-icon class="md-24">settings</md-icon></button>
+    </div>
+    <router-outlet></router-outlet>
+</td-layout-manage-list>

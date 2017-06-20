@@ -1,0 +1,26 @@
+{
+    "easybeam": {
+        "tenantRole": {
+            "home": {
+                "toolbar": "管理用户角色",
+                "title": "用户角色列表",
+                "createLabel": "创建用户角色",
+                "createOrEditLabel": "创建或编辑用户角色"
+            },
+            "created": "创建了用户角色 {{ name }}",
+            "updated": "更新了用户角色 {{ name }}",
+            "deleted": "删除了用户角色 {{ name }}",
+            "delete": {
+                "question": "你确认要删除用户角色 {{ name }} 吗？"
+            },
+            "detail": {
+                "title": "用户角色详细"
+            },
+            "name": "角色名",
+            "description": "说明",
+            "policies": "策略",
+            "groups": "用户组",
+            "users": "用户"
+        }
+    }
+}

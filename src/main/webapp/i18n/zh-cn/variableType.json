@@ -1,0 +1,16 @@
+{
+    "easybeam": {
+        "VariableType" : {
+            "null": "",
+            "TYPE_STRING": "TYPE_STRING",
+            "TYPE_INTEGER": "TYPE_INTEGER",
+            "TYPE_LONG": "TYPE_LONG",
+            "TYPE_BIGDECIMAL": "TYPE_BIGDECIMAL",
+            "TYPE_FLOAT": "TYPE_FLOAT",
+            "TYPE_DOUBLE": "TYPE_DOUBLE",
+            "TYPE_ENUM": "TYPE_ENUM",
+            "TYPE_BOOLEAN": "TYPE_BOOLEAN",
+            "TYPE_DATE": "TYPE_DATE"
+        }
+    }
+}

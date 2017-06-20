@@ -1,0 +1,96 @@
+<div class="md-content" class="inset">
+    <div layout="column" layout-gt-sm="row">
+        <div flex-gt-sm="100">
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span jhiTranslate="settings.title" translateValues="{username: '{{settingsAccount.login}}'}" *ngIf="settingsAccount">User settings for [<b>{{settingsAccount.login}}</b>]</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-subtitle>
+                    <div class="alert alert-success" *ngIf="success" jhiTranslate="settings.messages.success">
+                        <strong>Settings saved!</strong>
+                    </div>
+                    <jhi-alert-error></jhi-alert-error>
+                </md-card-subtitle>
+                <md-divider></md-divider>
+                <md-card-content class="push-bottom-none">
+                    <form (ngSubmit)="save()" #settingsForm="ngForm" *ngIf="settingsAccount">
+                        <!-- First Name -->
+                        <div layout="row">
+                            <md-input-container flex>
+                                <input mdInput #firstName #firstNameControl="ngModel" type="text" placeholder="{{'settings.form.firstname' | translate}}" [(ngModel)]="settingsAccount.firstName" id="firstName" name="firstName" required minlength=1 maxlength=50>
+                                <md-hint align="start">
+                                    <span [hidden]="firstNameControl.pristine || !firstNameControl.errors?.required" class="tc-red-600" jhiTranslate="settings.messages.validate.firstname.required">
+                                        Your first name is required.
+                                    </span>
+                                    <span [hidden]="firstNameControl.pristine || !firstNameControl.errors?.minlength" class="tc-red-600" jhiTranslate="settings.messages.validate.firstname.minlength">
+                                        Your first name is required to be at least 1 character.
+                                    </span>
+                                    <span [hidden]="firstNameControl.pristine || !firstNameControl.errors?.maxlength" class="tc-red-600" jhiTranslate="settings.messages.validate.firstname.maxlength">
+                                        Your first name cannot be longer than 50 characters.
+                                    </span>
+                                </md-hint>
+                                <md-hint align="end">{{firstName.value.length}} / 50</md-hint>
+                            </md-input-container>
+                        </div>
+                        <!-- Last Name -->
+                        <div layout="row">
+                            <md-input-container flex>
+                                <input mdInput #lastName #lastNameControl="ngModel" type="text" placeholder="{{'settings.form.lastname' | translate}}" [(ngModel)]="settingsAccount.lastName" id="lastName" name="lastName" required minlength=1 maxlength=50>
+                                <md-hint align="start">
+                                    <span [hidden]="lastNameControl.pristine || !lastNameControl.errors?.required" class="tc-red-600" jhiTranslate="settings.messages.validate.lastname.required">
+                                                Your last name is required.
+                                            </span>
+                                    <span [hidden]="lastNameControl.pristine || !lastNameControl.errors?.minlength" class="tc-red-600" jhiTranslate="settings.messages.validate.lastname.minlength">
+                                                Your last name is required to be at least 1 character.
+                                            </span>
+                                    <span [hidden]="lastNameControl.pristine || !lastNameControl.errors?.maxlength" class="tc-red-600" jhiTranslate="settings.messages.validate.lastname.maxlength">
+                                                Your last name cannot be longer than 50 characters.
+                                            </span>
+                                </md-hint>
+                                <md-hint align="end">{{lastName.value.length}} / 50</md-hint>
+                            </md-input-container>
+                        </div>
+                        <!-- Email -->
+                        <div layout="row" class="push-top">
+                            <md-input-container flex>
+                                <input mdInput #email #emailControl="ngModel" type="email" placeholder="{{'global.form.email' | translate}}" [(ngModel)]="settingsAccount.email" id="email" name="email" required minlength=5 maxlength=100 pattern="^[a-zA-Z0-9]+(\.[_a-zA-Z0-9]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,15})$">
+                                <md-hint align="start">
+                                    <span [hidden]="emailControl.pristine || !emailControl.errors?.required" class="tc-red-600" jhiTranslate="global.messages.validate.email.required">
+                                        Your email is required.
+                                    </span>
+                                    <span [hidden]="emailControl.pristine || !emailControl.errors?.invalid" class="tc-red-600" jhiTranslate="global.messages.validate.email.invalid">
+                                        Your email is invalid.
+                                    </span>
+                                    <span [hidden]="emailControl.pristine || !emailControl.errors?.pattern" class="tc-red-600" jhiTranslate="global.messages.validate.email.invalid">
+                                        Your email is invalid.
+                                    </span>
+                                    <span [hidden]="emailControl.pristine || !emailControl.errors?.minlength" class="tc-red-600" jhiTranslate="global.messages.validate.email.minlength">
+                                        Your email is required to be at least 5 characters.
+                                    </span>
+                                    <span [hidden]="emailControl.pristine || !emailControl.errors?.maxlength" class="tc-red-600" jhiTranslate="global.messages.validate.email.maxlength">
+                                        Your email cannot be longer than 100 characters.
+                                    </span>
+                                </md-hint>
+                                <md-hint align="end">{{email.value.length}} / 100</md-hint>
+                            </md-input-container>
+                        </div>
+                        <!-- Language -->
+                        <div layout="row" class="push-top" *ngIf="languages && languages.length > 0">
+                            <md-select flex="50" placeholder="{{'settings.form.language' | translate}}" id="langKey" name="langKey" [(ngModel)]="settingsAccount.langKey">
+                                <md-option *ngFor="let language of languages" [value]="language">{{language | findLanguageFromKey}}</md-option>
+                            </md-select>
+                        </div>
+                    </form>
+                </md-card-content>
+                <md-divider></md-divider>
+                <md-card-actions>
+                    <button md-button color="primary" (click)="save()">
+                        <span jhiTranslate="settings.form.button">Save</span>
+                    </button>
+                </md-card-actions>
+            </md-card>
+        </div>
+    </div>
+</div>

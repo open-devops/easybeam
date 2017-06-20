@@ -1,0 +1,72 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "testStep",
+            "otherEntityName": "testStep",
+            "otherEntityField": "name",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "testStepResult"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "testStepItemResults",
+            "otherEntityName": "testStepItemResult",
+            "otherEntityRelationshipName": "testStepResult"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "testCaseResult",
+            "otherEntityName": "testCaseResult",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "javadoc": "名称",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "startTime",
+            "javadoc": "开始时间",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "endTime",
+            "javadoc": "结束时间",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "duration",
+            "javadoc": "结束时间（秒）",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "inputScreenshotPath",
+            "javadoc": "输入画面截屏保存位置",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "verificationScreenshotPath",
+            "javadoc": "验证画面截屏保存位置",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "result",
+            "javadoc": "执行结果",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "error",
+            "javadoc": "错误详细",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170502085438",
+    "entityTableName": "test_step_result",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

@@ -1,0 +1,39 @@
+<md-card>
+    <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
+        <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
+            <span class="md-title" jhiTranslate="easybeam.tenantGroup.home.title">User List</span>
+        </span>
+        <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="{{'global.form.search.placeholder' | translate}}" (searchDebounce)="search($event)" flex>
+        </td-search-box>
+    </div>
+    <md-divider></md-divider>
+    <ng-template tdLoading="tenant-groups.load">
+        <td-data-table #dataTable [data]="filteredData" [columns]="columns" [sortBy]="sortBy" [sortOrder]="sortOrder" (sortChange)="sort($event)">
+            <ng-template tdDataTableTemplate="id" let-value="value" let-row="row">
+                <div layout="row">
+                    <button md-icon-button color="primary" [routerLink]="['/portal/project-mgr/groups/' + value + '/view']">
+                        <md-icon>visibility</md-icon>
+                    </button>
+                    <button md-icon-button color="primary" [routerLink]="['/portal/project-mgr/groups/' + value + '/edit']">
+                        <md-icon>edit</md-icon>
+                    </button>
+                    <button md-icon-button color="primary" (click)="confirmDelete(value, row['name'])">
+                        <md-icon>delete</md-icon>
+                    </button>
+                </div>
+            </ng-template>
+        </td-data-table>
+        <div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
+            <h3>
+                <span jhiTranslate="entity.list.noResult">No results to display.</span>
+            </h3>
+        </div>
+        <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)">
+            <span td-paging-bar-label hide-xs jhiTranslate="entity.list.rowPerPage">Row per page:</span> {{pagingBar.range}}
+            <span hide-xs>of {{pagingBar.total}}</span>
+        </td-paging-bar>
+    </ng-template>
+</md-card>
+<a md-fab color="accent" class="mat-fab-bottom-right fixed" [routerLink]="['add']">
+    <md-icon>add</md-icon>
+</a>

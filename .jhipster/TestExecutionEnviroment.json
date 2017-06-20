@@ -1,0 +1,51 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "operationSystem",
+            "otherEntityName": "testOperationSystem",
+            "otherEntityField": "name",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "testExecutionEnviroment"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "webBrowser",
+            "otherEntityName": "testWebBrowser",
+            "otherEntityField": "name",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "testExecutionEnviroment"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "javadoc": "名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "javadoc": "说明",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "broswerWindowHeight",
+            "javadoc": "窗口尺寸设定 - 高度",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "broswerWindowWidth",
+            "javadoc": "窗口尺寸设定 - 宽度",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170502085430",
+    "entityTableName": "test_execution_enviroment",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

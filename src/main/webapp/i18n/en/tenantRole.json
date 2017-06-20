@@ -1,0 +1,26 @@
+{
+    "easybeam": {
+        "tenantRole": {
+            "home": {
+                "toolbar": "Manage Roles",
+                "title": "Role List",
+                "createLabel": "Create a new Role",
+                "createOrEditLabel": "Create or edit a Role"
+            },
+            "created": "A new Role is created with identifier {{ name }}",
+            "updated": "A Role is updated with identifier {{ name }}",
+            "deleted": "A Role is deleted with identifier {{ name }}",
+            "delete": {
+                "question": "Are you sure you want to delete Role - {{ name }}?"
+            },
+            "detail": {
+                "title": "Role Form"
+            },
+            "name": "Name",
+            "description": "Description",
+            "policies": "Policies",
+            "groups": "Groups",
+            "users": "Users"
+        }
+    }
+}

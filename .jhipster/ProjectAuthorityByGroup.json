@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "group",
+            "otherEntityName": "tenantGroup",
+            "otherEntityField": "name",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "projectAuthorityByGroup"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "role",
+            "otherEntityName": "tenantRole",
+            "otherEntityField": "name",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "projectAuthorityByGroup"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "project",
+            "otherEntityName": "project",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170502085400",
+    "entityTableName": "project_authority_by_group",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

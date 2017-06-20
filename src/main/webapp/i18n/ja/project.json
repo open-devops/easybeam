@@ -1,0 +1,27 @@
+{
+    "easybeam": {
+        "project": {
+            "home": {
+                "toolbar": "プロジェクト管理",
+                "title": "プロジェクトリスト",
+                "createLabel": "プロジェクトを追加",
+                "createOrEditLabel": "プロジェクトを追加または編集"
+            },
+            "switched": "プロジェクト {{ name }} へ遷移しました。",
+            "created": "プロジェクト {{ name }} が作成されました。",
+            "updated": "プロジェクト {{ name }} が更新されました。",
+            "deleted": "プロジェクト {{ name }} が削除されました。",
+            "delete": {
+                "question": "プロジェクト {{ name }} を削除してもよろしいですか。"
+            },
+            "detail": {
+                "title": "プロジェクトフォーム"
+            },
+            "name": "プロジェクト名",
+            "description": "説明",
+            "isActive": "アクティブ・プロジェクト",
+            "isPublic": "パブリック・プロジェクト",
+            "account": "アカウント"
+        }
+    }
+}

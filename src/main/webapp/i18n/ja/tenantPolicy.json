@@ -1,0 +1,25 @@
+{
+    "easybeam": {
+        "tenantPolicy" : {
+            "home": {
+                "title": "TenantPolicies",
+                "createLabel": "Tenant Policy を追加",
+                "createOrEditLabel": "Tenant Policyを追加または編集"
+            },
+            "created": "A new Tenant Policy is created with identifier {{ param }}",
+            "updated": "A Tenant Policy is updated with identifier {{ param }}",
+            "deleted": "A Tenant Policy is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Tenant Policy {{ id }}を削除してもよろしいですか？"
+            },
+            "detail": {
+                "title": "Tenant Policy"
+            },
+            "name": "Name",
+            "type": "Type",
+            "description": "Description",
+            "permissions": "Permissions",
+            "roles": "Roles"
+        }
+    }
+}

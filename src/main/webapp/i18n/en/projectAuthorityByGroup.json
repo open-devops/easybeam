@@ -1,0 +1,24 @@
+{
+    "easybeam": {
+        "projectAuthorityByGroup" : {
+            "home": {
+                "title": "Project Authority By Groups",
+                "createLabel": "Create a new Project Authority By Group",
+                "createOrEditLabel": "Create or edit a Project Authority By Group"
+            },
+            "created": "A new Project Authority By Group is created with identifier {{ param }}",
+            "updated": "A Project Authority By Group is updated with identifier {{ param }}",
+            "deleted": "A Project Authority By Group is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Project Authority By Group {{ id }}?"
+            },
+            "detail": {
+                "title": "Project Authority By Group"
+            },
+            "description": "Description",
+            "group": "Group",
+            "role": "Role",
+            "project": "Project"
+        }
+    }
+}

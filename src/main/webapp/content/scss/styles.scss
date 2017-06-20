@@ -1,0 +1,32 @@
+// Custom style for loading elements without height
+.will-load {
+    min-height: 80px;
+}
+
+// Href line height wasn't right for md-icon-button
+a[md-icon-button] {
+    line-height: 36px;
+}
+
+// Capitalize
+.text-capital {
+    text-transform: capitalize;
+}
+
+// Lighter font weight in sub-toolbars
+td-layout-manage-list .mat-toolbar {
+    font-weight: 400;
+}
+
+// Change page footer to deep color theme
+.white-orange {
+    .td-layout-footer {
+        color: white;
+        background-color: #37474F;
+    }
+}
+
+// Right Drawer Pannel
+md-sidenav {
+    width: 650px;
+}

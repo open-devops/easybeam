@@ -1,0 +1,25 @@
+{
+    "easybeam": {
+        "tenantGroup": {
+            "home": {
+                "toolbar": "グループ管理",
+                "title": "グループリスト",
+                "createLabel": "グループを追加",
+                "createOrEditLabel": "グループを追加または編集"
+            },
+            "created": "グループ {{ name }} が作成されました。",
+            "updated": "グループ {{ name }} が更新されました。",
+            "deleted": "グループ {{ name }} が削除されました。",
+            "delete": {
+                "question": "グループ {{ name }} を削除してもよろしいですか。"
+            },
+            "detail": {
+                "title": "グループフォーム"
+            },
+            "name": "グループ名",
+            "description": "説明",
+            "roles": "ロール",
+            "users": "ユーザー"
+        }
+    }
+}

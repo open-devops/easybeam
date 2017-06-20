@@ -1,0 +1,21 @@
+{
+    "easybeam": {
+        "tenantUser": {
+            "home": {
+                "toolbar": "管理用户",
+                "title": "用户列表",
+                "createLabel": "创建用户",
+                "createOrEditLabel": "创建或编辑用户"
+            },
+            "created": "创建了用户 {{ name }}",
+            "updated": "更新了用户 {{ name }}",
+            "deleted": "删除了用户 {{ name }}",
+            "delete": {
+                "question": "你确认要删除用户 {{ name }} 吗？"
+            },
+            "detail": {
+                "title": "用户详细"
+            }
+        }
+    }
+}

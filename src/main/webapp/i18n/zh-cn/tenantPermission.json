@@ -1,0 +1,25 @@
+{
+    "easybeam": {
+        "tenantPermission" : {
+            "home": {
+                "title": "Tenant Permissions",
+                "createLabel": "Create a new Tenant Permission",
+                "createOrEditLabel": "Create or edit a Tenant Permission"
+            },
+            "created": "A new Tenant Permission is created with identifier {{ param }}",
+            "updated": "A Tenant Permission is updated with identifier {{ param }}",
+            "deleted": "A Tenant Permission is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tenant Permission {{ id }}?"
+            },
+            "detail": {
+                "title": "Tenant Permission"
+            },
+            "name": "Name",
+            "serviceName": "Service Name",
+            "serviceAccessLevel": "Service Access Level",
+            "description": "Description",
+            "policies": "Policies"
+        }
+    }
+}
