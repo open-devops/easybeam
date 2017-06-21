@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRouteSnapshot, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 
-import { JhiLanguageService, EventManager, AlertService } from 'ng-jhipster';
+import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 import { TranslateService, TranslationChangeEvent, LangChangeEvent } from '@ngx-translate/core';
 import { Account, Principal, EVENT_TENANT_GROUP_LIST_MODIFICATION, JhiLanguageHelper } from './../../../shared';
 
@@ -27,15 +27,13 @@ export class TenantGroupFormComponent implements OnInit, AfterViewInit, OnDestro
     updatedEventMessage = '';
 
     constructor(private principal: Principal,
-                private languageService: JhiLanguageService,
                 private languageHelper: JhiLanguageHelper,
                 private translateService: TranslateService,
                 private route: ActivatedRoute,
                 private router: Router,
-                private alertService: AlertService,
-                private eventManager: EventManager,
+                private alertService: JhiAlertService,
+                private eventManager: JhiEventManager,
                 private tenantGroupService: TenantGroupService) {
-        this.languageService.addLocation('all');
     }
 
     goBack(): void {

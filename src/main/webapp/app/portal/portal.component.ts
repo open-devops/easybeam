@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
 import { TranslateService, TranslationChangeEvent, LangChangeEvent } from '@ngx-translate/core';
 import { TdMediaService, TdLoadingService } from '@covalent/core';
-import { EventManager, JhiLanguageService, AlertService } from 'ng-jhipster';
+import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 import { EVENT_PROJECT_SWITCHED, EVENT_PROJECT_LIST_MODIFICATION } from './../shared';
 import { Principal, ResponseWrapper, LoginService } from '../shared';
 import { Project, ProjectService } from '../project-mgr';
@@ -56,20 +56,17 @@ export class PortalComponent implements OnInit, AfterViewInit {
     projectSwitchedMessage = '';
 
     constructor(public media: TdMediaService,
-                private alertService: AlertService,
+                private alertService: JhiAlertService,
                 private loginService: LoginService,
                 private router: Router,
                 private principal: Principal,
-                private eventManager: EventManager,
-                private jhiLanguageService: JhiLanguageService,
+                private eventManager: JhiEventManager,
                 private loadingService: TdLoadingService,
                 private translateService: TranslateService,
                 private projectService: ProjectService) {
     }
 
     ngOnInit() {
-        this.jhiLanguageService.addLocation('all');
-
         this.principal.identity().then((account) => {
             this.account = account;
         });

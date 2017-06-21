@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRouteSnapshot, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 
-import { JhiLanguageService, EventManager, AlertService } from 'ng-jhipster';
+import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 import { TranslateService, TranslationChangeEvent, LangChangeEvent } from '@ngx-translate/core';
 import { EVENT_PROJECT_LIST_MODIFICATION } from './../../../shared';
 
@@ -25,14 +25,12 @@ export class ProjectFormComponent implements OnInit, AfterViewInit, OnDestroy  {
     createdEventMessage = '';
     updatedEventMessage = '';
 
-    constructor(private languageService: JhiLanguageService,
-                private translateService: TranslateService,
+    constructor(private translateService: TranslateService,
                 private route: ActivatedRoute,
                 private router: Router,
-                private alertService: AlertService,
-                private eventManager: EventManager,
+                private alertService: JhiAlertService,
+                private eventManager: JhiEventManager,
                 private projectService: ProjectService) {
-        this.languageService.addLocation('all');
     }
 
     goBack(): void {

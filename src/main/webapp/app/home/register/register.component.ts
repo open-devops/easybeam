@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit, Renderer, ElementRef } from '@angular/core';
+
 import { JhiLanguageService } from 'ng-jhipster';
 
 import { Register } from './register.service';
@@ -24,7 +25,6 @@ export class RegisterComponent implements OnInit, AfterViewInit {
         private elementRef: ElementRef,
         private renderer: Renderer
     ) {
-        this.languageService.addLocation('all');
     }
 
     ngOnInit() {

@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { MdSnackBar } from '@angular/material';
 import { Subscription } from 'rxjs/Rx';
 
-import { EventManager, JhiLanguageService, AlertService } from 'ng-jhipster';
+import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 import { TranslateService, TranslationChangeEvent, LangChangeEvent } from '@ngx-translate/core';
 
 import { TdDataTableSortingOrder, TdDataTableService, ITdDataTableSortChangeEvent, IPageChangeEvent } from '@covalent/core';
@@ -47,16 +47,14 @@ export class TenantUserComponent implements OnInit, AfterViewInit {
 
     constructor(public media: TdMediaService,
                 public snackBar: MdSnackBar,
-                private alertService: AlertService,
+                private alertService: JhiAlertService,
                 private principal: Principal,
-                private eventManager: EventManager,
-                private languageService: JhiLanguageService,
+                private eventManager: JhiEventManager,
                 private translateService: TranslateService,
                 private loadingService: TdLoadingService,
                 private dialogService: TdDialogService,
                 private dataTableService: TdDataTableService,
                 private tenantUserService: TenantUserService) {
-        this.languageService.addLocation('all');
     }
 
     ngOnInit(): void {

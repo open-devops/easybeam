@@ -1,6 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRouteSnapshot, NavigationEnd } from '@angular/router';
-import { JhiLanguageService } from 'ng-jhipster';
 import { TranslateService, TranslationChangeEvent, LangChangeEvent } from '@ngx-translate/core';
 import { TdMediaService, TdLoadingService } from '@covalent/core';
 
@@ -14,9 +13,7 @@ export class ProjectManagementComponent implements OnInit, AfterViewInit {
 
     constructor(public media: TdMediaService,
                 private router: Router,
-                private jhiLanguageService: JhiLanguageService,
                 private translateService: TranslateService) {
-        this.jhiLanguageService.addLocation('all');
     }
 
     ngOnInit() {

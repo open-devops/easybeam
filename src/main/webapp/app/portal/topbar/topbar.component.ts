@@ -21,7 +21,6 @@ export class PortalTopbarComponent implements OnInit {
         private loginModalService: LoginModalService,
         private router: Router
     ) {
-        this.languageService.addLocation('home');
         this.createFullScreenLoadingOverlay();
     }
 

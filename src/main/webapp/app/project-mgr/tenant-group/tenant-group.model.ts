@@ -1,3 +1,4 @@
+import { BaseEntity } from './../../shared';
 import { TenantUser } from './../tenant-user'
 import { TenantRole } from './../tenant-role'
 
@@ -9,7 +10,7 @@ export class UserRole {
     }
 }
 
-export class TenantGroup {
+export class TenantGroup implements BaseEntity {
     constructor(
         public id?: number,
         public name?: string,

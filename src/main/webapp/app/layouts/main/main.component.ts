@@ -1,7 +1,6 @@
 import { Component, HostBinding, OnInit, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRouteSnapshot, NavigationEnd } from '@angular/router';
 import { TdMediaService, TdLoadingService, LoadingType, LoadingMode } from '@covalent/core';
-import { JhiLanguageService } from 'ng-jhipster';
 import { JhiLanguageHelper, Principal, StateStorageService } from '../../shared';
 import { fadeAnimation } from '../../app.animations';
 
@@ -20,15 +19,11 @@ export class MainComponent implements OnInit, AfterViewInit {
     constructor(
         public media: TdMediaService,
         private loadingService: TdLoadingService,
-        private jhiLanguageService: JhiLanguageService,
         private jhiLanguageHelper: JhiLanguageHelper,
         private router: Router,
         private $storageService: StateStorageService,
         private principal: Principal
    ) {
-        // Just for forcing translation loading
-        jhiLanguageService.setLocations(['all']);
-
         this.createFullScreenLoadingOverlay();
     }
 

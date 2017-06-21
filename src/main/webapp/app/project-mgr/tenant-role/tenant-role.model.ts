@@ -1,4 +1,6 @@
-export class TenantRole {
+import { BaseEntity } from './../../shared';
+
+export class TenantRole implements BaseEntity {
     constructor(
         public id?: number,
         public name?: string,
