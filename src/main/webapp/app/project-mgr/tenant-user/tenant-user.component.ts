@@ -3,7 +3,7 @@ import { MdSnackBar } from '@angular/material';
 import { Subscription } from 'rxjs/Rx';
 
 import { EventManager, JhiLanguageService, AlertService } from 'ng-jhipster';
-import { TranslateService, TranslationChangeEvent, LangChangeEvent } from 'ng2-translate/ng2-translate';
+import { TranslateService, TranslationChangeEvent, LangChangeEvent } from '@ngx-translate/core';
 
 import { TdDataTableSortingOrder, TdDataTableService, ITdDataTableSortChangeEvent, IPageChangeEvent } from '@covalent/core';
 import { TdDialogService, TdMediaService, TdLoadingService, LoadingType, LoadingMode } from '@covalent/core';

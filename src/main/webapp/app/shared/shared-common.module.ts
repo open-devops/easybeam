@@ -1,6 +1,6 @@
 import { NgModule, Sanitizer } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { TranslateService } from 'ng2-translate';
+import { TranslateService } from '@ngx-translate/core';
 import { AlertService } from 'ng-jhipster';
 import { WindowRef } from './tracker/window.service';
 import {

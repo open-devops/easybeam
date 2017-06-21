@@ -1,7 +1,7 @@
 import { Component, HostBinding, OnInit, AfterViewInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
-import { TranslateService, TranslationChangeEvent, LangChangeEvent } from 'ng2-translate/ng2-translate';
+import { TranslateService, TranslationChangeEvent, LangChangeEvent } from '@ngx-translate/core';
 import { TdMediaService, TdLoadingService } from '@covalent/core';
 import { EventManager, JhiLanguageService, AlertService } from 'ng-jhipster';
 import { EVENT_PROJECT_SWITCHED, EVENT_PROJECT_LIST_MODIFICATION } from './../shared';

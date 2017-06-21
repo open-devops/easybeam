@@ -3,7 +3,7 @@ import { Router, ActivatedRouteSnapshot, ActivatedRoute } from '@angular/router'
 import { Observable } from 'rxjs/Rx';
 
 import { JhiLanguageService, EventManager, AlertService } from 'ng-jhipster';
-import { TranslateService, TranslationChangeEvent, LangChangeEvent } from 'ng2-translate/ng2-translate';
+import { TranslateService, TranslationChangeEvent, LangChangeEvent } from '@ngx-translate/core';
 import { Account, Principal, EVENT_TENANT_USER_LIST_MODIFICATION, JhiLanguageHelper } from './../../../shared';
 
 import { TenantUser } from './../tenant-user.model';

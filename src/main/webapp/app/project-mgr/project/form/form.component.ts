@@ -3,7 +3,7 @@ import { Router, ActivatedRouteSnapshot, ActivatedRoute } from '@angular/router'
 import { Observable } from 'rxjs/Rx';
 
 import { JhiLanguageService, EventManager, AlertService } from 'ng-jhipster';
-import { TranslateService, TranslationChangeEvent, LangChangeEvent } from 'ng2-translate/ng2-translate';
+import { TranslateService, TranslationChangeEvent, LangChangeEvent } from '@ngx-translate/core';
 import { EVENT_PROJECT_LIST_MODIFICATION } from './../../../shared';
 
 import { Project } from './../project.model';
