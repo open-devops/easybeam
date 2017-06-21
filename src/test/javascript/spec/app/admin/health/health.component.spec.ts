@@ -14,8 +14,8 @@ describe('Component Tests', () => {
         let service: JhiHealthService;
 
         beforeEach(async(() => {
-            TestBed.configurEasyBeamingModule({
-                imports: [EasyBeamTestModule],
+            TestBed.configureTestingModule({
+                imports: [EasybeamTestModule],
                 declarations: [JhiHealthCheckComponent],
                 providers: [
                     JhiHealthService,
@@ -24,12 +24,7 @@ describe('Component Tests', () => {
                         useValue: null
                     }
                 ]
-            })
-            .overrideComponent(JhiHealthCheckComponent, {
-                set: {
-                    template: ''
-                }
-            })
+            }).overrideTemplate(JhiHealthCheckComponent, '')
             .compileComponents();
         }));
 

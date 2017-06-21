@@ -3,10 +3,10 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { SharedModule } from '../shared';
 
 import {
-    Activate,
-    Password,
-    PasswordResetInit,
-    PasswordResetFinish,
+    ActivateService,
+    PasswordService,
+    PasswordResetInitService,
+    PasswordResetFinishService,
     ActivateComponent,
     PasswordComponent,
     PasswordResetInitComponent,
@@ -26,10 +26,10 @@ import {
         SettingsComponent
     ],
     providers: [
-        Activate,
-        Password,
-        PasswordResetInit,
-        PasswordResetFinish
+        ActivateService,
+        PasswordService,
+        PasswordResetInitService,
+        PasswordResetFinishService
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -9,10 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 
 /**
  * Service Implementation for managing Project.
@@ -22,7 +21,7 @@ import java.util.List;
 public class ProjectServiceImpl implements ProjectService{
 
     private final Logger log = LoggerFactory.getLogger(ProjectServiceImpl.class);
-    
+
     private final ProjectRepository projectRepository;
 
     private final ProjectMapper projectMapper;
@@ -43,13 +42,12 @@ public class ProjectServiceImpl implements ProjectService{
         log.debug("Request to save Project : {}", projectDTO);
         Project project = projectMapper.toEntity(projectDTO);
         project = projectRepository.save(project);
-        ProjectDTO result = projectMapper.toDto(project);
-        return result;
+        return projectMapper.toDto(project);
     }
 
     /**
      *  Get all the projects.
-     *  
+     *
      *  @param pageable the pagination information
      *  @return the list of entities
      */
@@ -57,8 +55,8 @@ public class ProjectServiceImpl implements ProjectService{
     @Transactional(readOnly = true)
     public Page<ProjectDTO> findAll(Pageable pageable) {
         log.debug("Request to get all Projects");
-        Page<Project> result = projectRepository.findAll(pageable);
-        return result.map(project -> projectMapper.toDto(project));
+        return projectRepository.findAll(pageable)
+            .map(projectMapper::toDto);
     }
 
     /**
@@ -72,8 +70,7 @@ public class ProjectServiceImpl implements ProjectService{
     public ProjectDTO findOne(Long id) {
         log.debug("Request to get Project : {}", id);
         Project project = projectRepository.findOne(id);
-        ProjectDTO projectDTO = projectMapper.toDto(project);
-        return projectDTO;
+        return projectMapper.toDto(project);
     }
 
     /**

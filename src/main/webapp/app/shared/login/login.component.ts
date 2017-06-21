@@ -1,7 +1,7 @@
 import { Component, OnInit, Renderer, ElementRef } from '@angular/core';
 import { MdDialogRef } from '@angular/material';
 import { Router } from '@angular/router';
-import { EventManager } from 'ng-jhipster';
+import { JhiEventManager } from 'ng-jhipster';
 
 import { LoginService } from './login.service';
 import { StateStorageService } from '../auth/state-storage.service';
@@ -20,7 +20,7 @@ export class JhiLoginModalComponent implements OnInit {
     credentials: any;
 
     constructor(
-        private eventManager: EventManager,
+        private eventManager: JhiEventManager,
         private loginService: LoginService,
         private stateStorageService: StateStorageService,
         private elementRef: ElementRef,

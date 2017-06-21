@@ -19,7 +19,7 @@ public interface TenantPolicyService {
 
     /**
      *  Get all the tenantPolicies.
-     *  
+     *
      *  @param pageable the pagination information
      *  @return the list of entities
      */

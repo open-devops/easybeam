@@ -9,10 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 
 /**
  * Service Implementation for managing ProjectAuthorityByUser.
@@ -22,7 +21,7 @@ import java.util.List;
 public class ProjectAuthorityByUserServiceImpl implements ProjectAuthorityByUserService{
 
     private final Logger log = LoggerFactory.getLogger(ProjectAuthorityByUserServiceImpl.class);
-    
+
     private final ProjectAuthorityByUserRepository projectAuthorityByUserRepository;
 
     private final ProjectAuthorityByUserMapper projectAuthorityByUserMapper;
@@ -43,13 +42,12 @@ public class ProjectAuthorityByUserServiceImpl implements ProjectAuthorityByUser
         log.debug("Request to save ProjectAuthorityByUser : {}", projectAuthorityByUserDTO);
         ProjectAuthorityByUser projectAuthorityByUser = projectAuthorityByUserMapper.toEntity(projectAuthorityByUserDTO);
         projectAuthorityByUser = projectAuthorityByUserRepository.save(projectAuthorityByUser);
-        ProjectAuthorityByUserDTO result = projectAuthorityByUserMapper.toDto(projectAuthorityByUser);
-        return result;
+        return projectAuthorityByUserMapper.toDto(projectAuthorityByUser);
     }
 
     /**
      *  Get all the projectAuthorityByUsers.
-     *  
+     *
      *  @param pageable the pagination information
      *  @return the list of entities
      */
@@ -57,8 +55,8 @@ public class ProjectAuthorityByUserServiceImpl implements ProjectAuthorityByUser
     @Transactional(readOnly = true)
     public Page<ProjectAuthorityByUserDTO> findAll(Pageable pageable) {
         log.debug("Request to get all ProjectAuthorityByUsers");
-        Page<ProjectAuthorityByUser> result = projectAuthorityByUserRepository.findAll(pageable);
-        return result.map(projectAuthorityByUser -> projectAuthorityByUserMapper.toDto(projectAuthorityByUser));
+        return projectAuthorityByUserRepository.findAll(pageable)
+            .map(projectAuthorityByUserMapper::toDto);
     }
 
     /**
@@ -72,8 +70,7 @@ public class ProjectAuthorityByUserServiceImpl implements ProjectAuthorityByUser
     public ProjectAuthorityByUserDTO findOne(Long id) {
         log.debug("Request to get ProjectAuthorityByUser : {}", id);
         ProjectAuthorityByUser projectAuthorityByUser = projectAuthorityByUserRepository.findOne(id);
-        ProjectAuthorityByUserDTO projectAuthorityByUserDTO = projectAuthorityByUserMapper.toDto(projectAuthorityByUser);
-        return projectAuthorityByUserDTO;
+        return projectAuthorityByUserMapper.toDto(projectAuthorityByUser);
     }
 
     /**

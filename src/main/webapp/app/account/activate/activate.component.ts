@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Activate } from './activate.service';
+import { ActivateService } from './activate.service';
 import { LoginModalService } from '../../shared';
 
 @Component({
@@ -13,7 +13,7 @@ export class ActivateComponent implements OnInit {
     success: string;
 
     constructor(
-        private activate: Activate,
+        private activateService: ActivateService,
         private loginModalService: LoginModalService,
         private route: ActivatedRoute
     ) {
@@ -21,7 +21,7 @@ export class ActivateComponent implements OnInit {
 
     ngOnInit() {
         this.route.queryParams.subscribe((params) => {
-            this.activate.get(params['key']).subscribe(() => {
+            this.activateService.get(params['key']).subscribe(() => {
                 this.error = null;
                 this.success = 'OK';
             }, () => {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
+
 import { Principal, AccountService, JhiLanguageHelper } from '../../shared';
 
 @Component({

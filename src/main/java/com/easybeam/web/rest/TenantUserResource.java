@@ -33,7 +33,7 @@ public class TenantUserResource {
     private final Logger log = LoggerFactory.getLogger(TenantUserResource.class);
 
     private static final String ENTITY_NAME = "tenantUser";
-        
+
     private final TenantUserService tenantUserService;
 
     public TenantUserResource(TenantUserService tenantUserService) {
@@ -66,7 +66,7 @@ public class TenantUserResource {
      * @param tenantUserDTO the tenantUserDTO to update
      * @return the ResponseEntity with status 200 (OK) and with body the updated tenantUserDTO,
      * or with status 400 (Bad Request) if the tenantUserDTO is not valid,
-     * or with status 500 (Internal Server Error) if the tenantUserDTO couldnt be updated
+     * or with status 500 (Internal Server Error) if the tenantUserDTO couldn't be updated
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
     @PutMapping("/tenant-users")
@@ -124,5 +124,4 @@ public class TenantUserResource {
         tenantUserService.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
-
 }

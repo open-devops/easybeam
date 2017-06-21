@@ -1,0 +1,9 @@
+{
+    "easybeamApp": {
+        "PolicyType" : {
+            "null": "",
+            "PLATFORM_MANAGED": "PLATFORM_MANAGED",
+            "CUSTOMER_MANAGED": "CUSTOMER_MANAGED"
+        }
+    }
+}

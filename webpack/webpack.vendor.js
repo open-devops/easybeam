@@ -38,6 +38,7 @@ module.exports = {
             'jquery',
             'ng-jhipster',
             'ng2-webstorage',
+            'ngx-cookie',
             'sockjs-client',
             'webstomp-client',
             'rxjs'
@@ -49,13 +50,14 @@ module.exports = {
     },
     module: {
         exprContextCritical: false,
-        rules: [{
+        rules: [
+	    {
                 test: /(vendor\.scss|global\.scss|styles\.scss|theme\.scss|platform\.scss)/,
                 loaders: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
             },
             {
                 test: /\.(jpe?g|png|gif|svg|woff2?|ttf|eot)$/i,
-                loaders: ['file-loader?hash=sha512&digest=hex&name=[hash].[ext]']
+                loaders: ['file-loader?hash=sha512&digest=hex&name=content/[hash].[ext]']
             }
         ]
     },

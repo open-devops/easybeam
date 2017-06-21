@@ -9,7 +9,6 @@
         "assets": [
             "content",
             "i18n",
-            "data",
             "favicon.ico"
         ],
         "index": "index.html",

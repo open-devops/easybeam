@@ -9,10 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 
 /**
  * Service Implementation for managing TenantUser.
@@ -22,7 +21,7 @@ import java.util.List;
 public class TenantUserServiceImpl implements TenantUserService{
 
     private final Logger log = LoggerFactory.getLogger(TenantUserServiceImpl.class);
-    
+
     private final TenantUserRepository tenantUserRepository;
 
     private final TenantUserMapper tenantUserMapper;
@@ -43,13 +42,12 @@ public class TenantUserServiceImpl implements TenantUserService{
         log.debug("Request to save TenantUser : {}", tenantUserDTO);
         TenantUser tenantUser = tenantUserMapper.toEntity(tenantUserDTO);
         tenantUser = tenantUserRepository.save(tenantUser);
-        TenantUserDTO result = tenantUserMapper.toDto(tenantUser);
-        return result;
+        return tenantUserMapper.toDto(tenantUser);
     }
 
     /**
      *  Get all the tenantUsers.
-     *  
+     *
      *  @param pageable the pagination information
      *  @return the list of entities
      */
@@ -57,8 +55,8 @@ public class TenantUserServiceImpl implements TenantUserService{
     @Transactional(readOnly = true)
     public Page<TenantUserDTO> findAll(Pageable pageable) {
         log.debug("Request to get all TenantUsers");
-        Page<TenantUser> result = tenantUserRepository.findAll(pageable);
-        return result.map(tenantUser -> tenantUserMapper.toDto(tenantUser));
+        return tenantUserRepository.findAll(pageable)
+            .map(tenantUserMapper::toDto);
     }
 
     /**
@@ -72,8 +70,7 @@ public class TenantUserServiceImpl implements TenantUserService{
     public TenantUserDTO findOne(Long id) {
         log.debug("Request to get TenantUser : {}", id);
         TenantUser tenantUser = tenantUserRepository.findOneWithEagerRelationships(id);
-        TenantUserDTO tenantUserDTO = tenantUserMapper.toDto(tenantUser);
-        return tenantUserDTO;
+        return tenantUserMapper.toDto(tenantUser);
     }
 
     /**

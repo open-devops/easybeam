@@ -13,11 +13,11 @@ import java.util.List;
 @SuppressWarnings("unused")
 @Repository
 public interface TenantPolicyRepository extends JpaRepository<TenantPolicy,Long> {
-
+    
     @Query("select distinct tenant_policy from TenantPolicy tenant_policy left join fetch tenant_policy.permissions")
     List<TenantPolicy> findAllWithEagerRelationships();
 
     @Query("select tenant_policy from TenantPolicy tenant_policy left join fetch tenant_policy.permissions where tenant_policy.id =:id")
     TenantPolicy findOneWithEagerRelationships(@Param("id") Long id);
-
+    
 }

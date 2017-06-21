@@ -19,7 +19,7 @@ public interface TenantPermissionService {
 
     /**
      *  Get all the tenantPermissions.
-     *  
+     *
      *  @param pageable the pagination information
      *  @return the list of entities
      */

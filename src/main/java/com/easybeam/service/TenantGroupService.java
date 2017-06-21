@@ -19,7 +19,7 @@ public interface TenantGroupService {
 
     /**
      *  Get all the tenantGroups.
-     *  
+     *
      *  @param pageable the pagination information
      *  @return the list of entities
      */

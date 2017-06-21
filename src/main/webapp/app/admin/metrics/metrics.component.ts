@@ -6,14 +6,14 @@ import { JhiMetricsService } from './metrics.service';
 
 @Component({
     selector: 'jhi-metrics',
-    templateUrl: './metrics.component.html',
+    templateUrl: './metrics.component.html'
 })
 export class JhiMetricsMonitoringComponent implements OnInit {
     metrics: any = {};
     cachesStats: any = {};
     servicesStats: any = {};
     updatingMetrics = true;
-    JCACHE_KEY: string ;
+    JCACHE_KEY: string;
 
     constructor(
         private modalService: NgbModal,
@@ -66,6 +66,13 @@ export class JhiMetricsMonitoringComponent implements OnInit {
                 // Left blank intentionally, nothing to do here
             });
         });
+    }
+
+    filterNaN(input) {
+        if (isNaN(input)) {
+            return 0;
+        }
+        return input;
     }
 
 }

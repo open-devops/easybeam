@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Routes, CanActivate } from '@angular/router';
 
-import { PaginationUtil } from 'ng-jhipster';
+import { JhiPaginationUtil } from 'ng-jhipster';
 
 import { UserMgmtComponent } from './user-management.component';
 import { UserMgmtDetailComponent } from './user-management-detail.component';
 import { UserDialogComponent } from './user-management-dialog.component';
 import { UserDeleteDialogComponent } from './user-management-delete-dialog.component';
 
-import { Principal, UserRouteAccessService } from '../../shared';
+import { Principal } from '../../shared';
 
 @Injectable()
 export class UserResolve implements CanActivate {
@@ -23,17 +23,17 @@ export class UserResolve implements CanActivate {
 @Injectable()
 export class UserResolvePagingParams implements Resolve<any> {
 
-  constructor(private paginationUtil: PaginationUtil) {}
+    constructor(private paginationUtil: JhiPaginationUtil) {}
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-      const page = route.queryParams['page'] ? route.queryParams['page'] : '1';
-      const sort = route.queryParams['sort'] ? route.queryParams['sort'] : 'id,asc';
-      return {
-          page: this.paginationUtil.parsePage(page),
-          predicate: this.paginationUtil.parsePredicate(sort),
-          ascending: this.paginationUtil.parseAscending(sort)
-    };
-  }
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+        const page = route.queryParams['page'] ? route.queryParams['page'] : '1';
+        const sort = route.queryParams['sort'] ? route.queryParams['sort'] : 'id,asc';
+        return {
+            page: this.paginationUtil.parsePage(page),
+            predicate: this.paginationUtil.parsePredicate(sort),
+            ascending: this.paginationUtil.parseAscending(sort)
+        };
+    }
 }
 
 export const userMgmtRoute: Routes = [
@@ -63,19 +63,19 @@ export const userMgmtRoute: Routes = [
 ];
 
 export const userDialogRoute: Routes = [
-  {
-    path: 'user-management-new',
-    component: UserDialogComponent,
-    outlet: 'popup'
-  },
-  {
-    path: 'user-management/:login/edit',
-    component: UserDialogComponent,
-    outlet: 'popup'
-  },
-  {
-    path: 'user-management/:login/delete',
-    component: UserDeleteDialogComponent,
-    outlet: 'popup'
-  }
+    {
+        path: 'user-management-new',
+        component: UserDialogComponent,
+        outlet: 'popup'
+    },
+    {
+        path: 'user-management/:login/edit',
+        component: UserDialogComponent,
+        outlet: 'popup'
+    },
+    {
+        path: 'user-management/:login/delete',
+        component: UserDeleteDialogComponent,
+        outlet: 'popup'
+    }
 ];

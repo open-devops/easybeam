@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EventManager } from 'ng-jhipster';
+import { JhiEventManager } from 'ng-jhipster';
 
 import { Account, Principal } from '../shared';
 
@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
     constructor(
         private principal: Principal,
-        private eventManager: EventManager
+        private eventManager: JhiEventManager
     ) {
     }
 

@@ -33,7 +33,7 @@ public class ProjectResource {
     private final Logger log = LoggerFactory.getLogger(ProjectResource.class);
 
     private static final String ENTITY_NAME = "project";
-        
+
     private final ProjectService projectService;
 
     public ProjectResource(ProjectService projectService) {
@@ -66,7 +66,7 @@ public class ProjectResource {
      * @param projectDTO the projectDTO to update
      * @return the ResponseEntity with status 200 (OK) and with body the updated projectDTO,
      * or with status 400 (Bad Request) if the projectDTO is not valid,
-     * or with status 500 (Internal Server Error) if the projectDTO couldnt be updated
+     * or with status 500 (Internal Server Error) if the projectDTO couldn't be updated
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
     @PutMapping("/projects")
@@ -124,5 +124,4 @@ public class ProjectResource {
         projectService.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
-
 }

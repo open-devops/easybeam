@@ -1,0 +1,21 @@
+{
+    "easybeamApp": {
+        "PlatformService" : {
+            "null": "",
+            "IAM": "IAM",
+            "IAM_GROUP": "IAM_GROUP",
+            "IAM_USER": "IAM_USER",
+            "IAM_ROLE": "IAM_ROLE",
+            "IAM_POLICY": "IAM_POLICY",
+            "IAM_PERMISSION": "IAM_PERMISSION",
+            "TEST": "TEST",
+            "TEST_PROJECT": "TEST_PROJECT",
+            "TEST_REQUIREMENTS": "TEST_REQUIREMENTS",
+            "TEST_ISSUES": "TEST_ISSUES",
+            "TEST_SCENARIO": "TEST_SCENARIO",
+            "TEST_CASES": "TEST_CASES",
+            "TEST_PLAN": "TEST_PLAN",
+            "TEST_INFRA": "TEST_INFRA"
+        }
+    }
+}

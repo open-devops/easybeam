@@ -32,7 +32,7 @@ public class ProjectAuthorityByGroupResource {
     private final Logger log = LoggerFactory.getLogger(ProjectAuthorityByGroupResource.class);
 
     private static final String ENTITY_NAME = "projectAuthorityByGroup";
-        
+
     private final ProjectAuthorityByGroupService projectAuthorityByGroupService;
 
     public ProjectAuthorityByGroupResource(ProjectAuthorityByGroupService projectAuthorityByGroupService) {
@@ -65,7 +65,7 @@ public class ProjectAuthorityByGroupResource {
      * @param projectAuthorityByGroupDTO the projectAuthorityByGroupDTO to update
      * @return the ResponseEntity with status 200 (OK) and with body the updated projectAuthorityByGroupDTO,
      * or with status 400 (Bad Request) if the projectAuthorityByGroupDTO is not valid,
-     * or with status 500 (Internal Server Error) if the projectAuthorityByGroupDTO couldnt be updated
+     * or with status 500 (Internal Server Error) if the projectAuthorityByGroupDTO couldn't be updated
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
     @PutMapping("/project-authority-by-groups")
@@ -123,5 +123,4 @@ public class ProjectAuthorityByGroupResource {
         projectAuthorityByGroupService.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
-
 }

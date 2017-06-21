@@ -32,7 +32,7 @@ public class ProjectAuthorityByUserResource {
     private final Logger log = LoggerFactory.getLogger(ProjectAuthorityByUserResource.class);
 
     private static final String ENTITY_NAME = "projectAuthorityByUser";
-        
+
     private final ProjectAuthorityByUserService projectAuthorityByUserService;
 
     public ProjectAuthorityByUserResource(ProjectAuthorityByUserService projectAuthorityByUserService) {
@@ -65,7 +65,7 @@ public class ProjectAuthorityByUserResource {
      * @param projectAuthorityByUserDTO the projectAuthorityByUserDTO to update
      * @return the ResponseEntity with status 200 (OK) and with body the updated projectAuthorityByUserDTO,
      * or with status 400 (Bad Request) if the projectAuthorityByUserDTO is not valid,
-     * or with status 500 (Internal Server Error) if the projectAuthorityByUserDTO couldnt be updated
+     * or with status 500 (Internal Server Error) if the projectAuthorityByUserDTO couldn't be updated
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
     @PutMapping("/project-authority-by-users")
@@ -123,5 +123,4 @@ public class ProjectAuthorityByUserResource {
         projectAuthorityByUserService.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
-
 }

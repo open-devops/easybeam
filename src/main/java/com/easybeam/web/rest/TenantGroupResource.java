@@ -33,7 +33,7 @@ public class TenantGroupResource {
     private final Logger log = LoggerFactory.getLogger(TenantGroupResource.class);
 
     private static final String ENTITY_NAME = "tenantGroup";
-        
+
     private final TenantGroupService tenantGroupService;
 
     public TenantGroupResource(TenantGroupService tenantGroupService) {
@@ -66,7 +66,7 @@ public class TenantGroupResource {
      * @param tenantGroupDTO the tenantGroupDTO to update
      * @return the ResponseEntity with status 200 (OK) and with body the updated tenantGroupDTO,
      * or with status 400 (Bad Request) if the tenantGroupDTO is not valid,
-     * or with status 500 (Internal Server Error) if the tenantGroupDTO couldnt be updated
+     * or with status 500 (Internal Server Error) if the tenantGroupDTO couldn't be updated
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
     @PutMapping("/tenant-groups")
@@ -124,5 +124,4 @@ public class TenantGroupResource {
         tenantGroupService.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
-
 }

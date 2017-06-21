@@ -13,11 +13,11 @@ import java.util.List;
 @SuppressWarnings("unused")
 @Repository
 public interface TenantRoleRepository extends JpaRepository<TenantRole,Long> {
-
+    
     @Query("select distinct tenant_role from TenantRole tenant_role left join fetch tenant_role.policies")
     List<TenantRole> findAllWithEagerRelationships();
 
     @Query("select tenant_role from TenantRole tenant_role left join fetch tenant_role.policies where tenant_role.id =:id")
     TenantRole findOneWithEagerRelationships(@Param("id") Long id);
-
+    
 }

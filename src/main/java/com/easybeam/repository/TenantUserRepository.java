@@ -16,11 +16,11 @@ public interface TenantUserRepository extends JpaRepository<TenantUser,Long> {
 
     @Query("select tenant_user from TenantUser tenant_user where tenant_user.account.login = ?#{principal.username}")
     List<TenantUser> findByAccountIsCurrentUser();
-
+    
     @Query("select distinct tenant_user from TenantUser tenant_user left join fetch tenant_user.groups left join fetch tenant_user.roles")
     List<TenantUser> findAllWithEagerRelationships();
 
     @Query("select tenant_user from TenantUser tenant_user left join fetch tenant_user.groups left join fetch tenant_user.roles where tenant_user.id =:id")
     TenantUser findOneWithEagerRelationships(@Param("id") Long id);
-
+    
 }

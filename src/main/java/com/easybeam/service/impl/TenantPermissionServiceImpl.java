@@ -9,10 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 
 /**
  * Service Implementation for managing TenantPermission.
@@ -22,7 +21,7 @@ import java.util.List;
 public class TenantPermissionServiceImpl implements TenantPermissionService{
 
     private final Logger log = LoggerFactory.getLogger(TenantPermissionServiceImpl.class);
-    
+
     private final TenantPermissionRepository tenantPermissionRepository;
 
     private final TenantPermissionMapper tenantPermissionMapper;
@@ -43,13 +42,12 @@ public class TenantPermissionServiceImpl implements TenantPermissionService{
         log.debug("Request to save TenantPermission : {}", tenantPermissionDTO);
         TenantPermission tenantPermission = tenantPermissionMapper.toEntity(tenantPermissionDTO);
         tenantPermission = tenantPermissionRepository.save(tenantPermission);
-        TenantPermissionDTO result = tenantPermissionMapper.toDto(tenantPermission);
-        return result;
+        return tenantPermissionMapper.toDto(tenantPermission);
     }
 
     /**
      *  Get all the tenantPermissions.
-     *  
+     *
      *  @param pageable the pagination information
      *  @return the list of entities
      */
@@ -57,8 +55,8 @@ public class TenantPermissionServiceImpl implements TenantPermissionService{
     @Transactional(readOnly = true)
     public Page<TenantPermissionDTO> findAll(Pageable pageable) {
         log.debug("Request to get all TenantPermissions");
-        Page<TenantPermission> result = tenantPermissionRepository.findAll(pageable);
-        return result.map(tenantPermission -> tenantPermissionMapper.toDto(tenantPermission));
+        return tenantPermissionRepository.findAll(pageable)
+            .map(tenantPermissionMapper::toDto);
     }
 
     /**
@@ -72,8 +70,7 @@ public class TenantPermissionServiceImpl implements TenantPermissionService{
     public TenantPermissionDTO findOne(Long id) {
         log.debug("Request to get TenantPermission : {}", id);
         TenantPermission tenantPermission = tenantPermissionRepository.findOne(id);
-        TenantPermissionDTO tenantPermissionDTO = tenantPermissionMapper.toDto(tenantPermission);
-        return tenantPermissionDTO;
+        return tenantPermissionMapper.toDto(tenantPermission);
     }
 
     /**

@@ -9,10 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 
 /**
  * Service Implementation for managing ProjectAuthorityByGroup.
@@ -22,7 +21,7 @@ import java.util.List;
 public class ProjectAuthorityByGroupServiceImpl implements ProjectAuthorityByGroupService{
 
     private final Logger log = LoggerFactory.getLogger(ProjectAuthorityByGroupServiceImpl.class);
-    
+
     private final ProjectAuthorityByGroupRepository projectAuthorityByGroupRepository;
 
     private final ProjectAuthorityByGroupMapper projectAuthorityByGroupMapper;
@@ -43,13 +42,12 @@ public class ProjectAuthorityByGroupServiceImpl implements ProjectAuthorityByGro
         log.debug("Request to save ProjectAuthorityByGroup : {}", projectAuthorityByGroupDTO);
         ProjectAuthorityByGroup projectAuthorityByGroup = projectAuthorityByGroupMapper.toEntity(projectAuthorityByGroupDTO);
         projectAuthorityByGroup = projectAuthorityByGroupRepository.save(projectAuthorityByGroup);
-        ProjectAuthorityByGroupDTO result = projectAuthorityByGroupMapper.toDto(projectAuthorityByGroup);
-        return result;
+        return projectAuthorityByGroupMapper.toDto(projectAuthorityByGroup);
     }
 
     /**
      *  Get all the projectAuthorityByGroups.
-     *  
+     *
      *  @param pageable the pagination information
      *  @return the list of entities
      */
@@ -57,8 +55,8 @@ public class ProjectAuthorityByGroupServiceImpl implements ProjectAuthorityByGro
     @Transactional(readOnly = true)
     public Page<ProjectAuthorityByGroupDTO> findAll(Pageable pageable) {
         log.debug("Request to get all ProjectAuthorityByGroups");
-        Page<ProjectAuthorityByGroup> result = projectAuthorityByGroupRepository.findAll(pageable);
-        return result.map(projectAuthorityByGroup -> projectAuthorityByGroupMapper.toDto(projectAuthorityByGroup));
+        return projectAuthorityByGroupRepository.findAll(pageable)
+            .map(projectAuthorityByGroupMapper::toDto);
     }
 
     /**
@@ -72,8 +70,7 @@ public class ProjectAuthorityByGroupServiceImpl implements ProjectAuthorityByGro
     public ProjectAuthorityByGroupDTO findOne(Long id) {
         log.debug("Request to get ProjectAuthorityByGroup : {}", id);
         ProjectAuthorityByGroup projectAuthorityByGroup = projectAuthorityByGroupRepository.findOne(id);
-        ProjectAuthorityByGroupDTO projectAuthorityByGroupDTO = projectAuthorityByGroupMapper.toDto(projectAuthorityByGroup);
-        return projectAuthorityByGroupDTO;
+        return projectAuthorityByGroupMapper.toDto(projectAuthorityByGroup);
     }
 
     /**

@@ -9,10 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 
 /**
  * Service Implementation for managing TenantRole.
@@ -22,7 +21,7 @@ import java.util.List;
 public class TenantRoleServiceImpl implements TenantRoleService{
 
     private final Logger log = LoggerFactory.getLogger(TenantRoleServiceImpl.class);
-    
+
     private final TenantRoleRepository tenantRoleRepository;
 
     private final TenantRoleMapper tenantRoleMapper;
@@ -43,13 +42,12 @@ public class TenantRoleServiceImpl implements TenantRoleService{
         log.debug("Request to save TenantRole : {}", tenantRoleDTO);
         TenantRole tenantRole = tenantRoleMapper.toEntity(tenantRoleDTO);
         tenantRole = tenantRoleRepository.save(tenantRole);
-        TenantRoleDTO result = tenantRoleMapper.toDto(tenantRole);
-        return result;
+        return tenantRoleMapper.toDto(tenantRole);
     }
 
     /**
      *  Get all the tenantRoles.
-     *  
+     *
      *  @param pageable the pagination information
      *  @return the list of entities
      */
@@ -57,8 +55,8 @@ public class TenantRoleServiceImpl implements TenantRoleService{
     @Transactional(readOnly = true)
     public Page<TenantRoleDTO> findAll(Pageable pageable) {
         log.debug("Request to get all TenantRoles");
-        Page<TenantRole> result = tenantRoleRepository.findAll(pageable);
-        return result.map(tenantRole -> tenantRoleMapper.toDto(tenantRole));
+        return tenantRoleRepository.findAll(pageable)
+            .map(tenantRoleMapper::toDto);
     }
 
     /**
@@ -72,8 +70,7 @@ public class TenantRoleServiceImpl implements TenantRoleService{
     public TenantRoleDTO findOne(Long id) {
         log.debug("Request to get TenantRole : {}", id);
         TenantRole tenantRole = tenantRoleRepository.findOneWithEagerRelationships(id);
-        TenantRoleDTO tenantRoleDTO = tenantRoleMapper.toDto(tenantRole);
-        return tenantRoleDTO;
+        return tenantRoleMapper.toDto(tenantRole);
     }
 
     /**

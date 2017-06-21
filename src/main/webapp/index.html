@@ -1,28 +1,29 @@
 <!doctype html>
-<html>
-
+<html class="no-js" lang="en">
 <head>
-    <base href="/" />
+    <base href="./" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>EasyBeam</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" href="favicon.png" sizes="36x36">
     <meta name="description" content="EasyBeam - Data Flow Pipeline Management Platform">
-    <meta name="theme-color" content="#000000">
+    
     <meta name="google" value="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="theme-color" content="#000000">
+    <link rel="manifest" href="manifest.webapp" />
 </head>
 
 <body>
     <!--[if lt IE 11]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <et-app>
+    <eb-app>
         <div style="padding: 20%;text-align:center;">
             <div>EasyBeam Platform Loading ...</div>
         </div>
-    </et-app>
+    </eb-app>
     <script>
         // load shim for IE
         if (window.navigator.userAgent.indexOf('Trident/') > 0) {
@@ -32,6 +33,18 @@
             document.getElementsByTagName('head')[0].appendChild(script)
         }
     </script>
+    <noscript>
+        <h1>You must enable javascript to view this page.</h1>
+    </noscript>
+    <!-- uncomment this for adding service worker
+        <script>
+            if ('serviceWorker' in navigator) {
+                 navigator.serviceWorker
+                    .register('./sw.js')
+                    .then(function() { console.log('Service Worker Registered'); });
+            }
+        </script>
+    -->
     <!-- Google Analytics: uncomment and change UA-XXXXX-X to be your site's ID.
     <script>
         (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -42,5 +55,4 @@
         ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>-->
 </body>
-
 </html>

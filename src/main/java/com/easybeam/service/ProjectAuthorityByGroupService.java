@@ -19,7 +19,7 @@ public interface ProjectAuthorityByGroupService {
 
     /**
      *  Get all the projectAuthorityByGroups.
-     *  
+     *
      *  @param pageable the pagination information
      *  @return the list of entities
      */

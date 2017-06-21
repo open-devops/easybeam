@@ -1,5 +1,5 @@
 # EasyBeam
-This application was generated using JHipster 4.4.1, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v4.4.1](https://jhipster.github.io/documentation-archive/v4.4.1).
+This application was generated using JHipster 4.5.5, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v4.5.5](https://jhipster.github.io/documentation-archive/v4.5.5).
 
 ## Development
 

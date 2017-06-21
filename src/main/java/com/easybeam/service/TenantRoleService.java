@@ -19,7 +19,7 @@ public interface TenantRoleService {
 
     /**
      *  Get all the tenantRoles.
-     *  
+     *
      *  @param pageable the pagination information
      *  @return the list of entities
      */
