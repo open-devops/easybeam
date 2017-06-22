@@ -1,5 +1,5 @@
 {
-    "easybeamApp": {
+    "easybeam": {
         "PolicyType" : {
             "null": "",
             "PLATFORM_MANAGED": "PLATFORM_MANAGED",

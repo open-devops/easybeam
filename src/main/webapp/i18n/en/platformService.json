@@ -1,5 +1,5 @@
 {
-    "easybeamApp": {
+    "easybeam": {
         "PlatformService" : {
             "null": "",
             "IAM": "IAM",
