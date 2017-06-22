@@ -4,7 +4,7 @@ import { DatePipe } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import { JhiDateUtils, JhiDataUtils, JhiEventManager } from 'ng-jhipster';
-import { EasybeamTestModule } from '../../../test.module';
+import { EasyBeamTestModule } from '../../../test.module';
 import { MockActivatedRoute } from '../../../helpers/mock-route.service';
 import { ProjectAuthorityByUserDetailComponent } from '../../../../../../main/webapp/app/entities/project-authority-by-user/project-authority-by-user-detail.component';
 import { ProjectAuthorityByUserService } from '../../../../../../main/webapp/app/entities/project-authority-by-user/project-authority-by-user.service';
@@ -19,7 +19,7 @@ describe('Component Tests', () => {
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
-                imports: [EasybeamTestModule],
+                imports: [EasyBeamTestModule],
                 declarations: [ProjectAuthorityByUserDetailComponent],
                 providers: [
                     JhiDateUtils,

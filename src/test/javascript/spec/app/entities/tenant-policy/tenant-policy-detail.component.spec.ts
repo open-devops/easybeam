@@ -4,7 +4,7 @@ import { DatePipe } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import { JhiDateUtils, JhiDataUtils, JhiEventManager } from 'ng-jhipster';
-import { EasybeamTestModule } from '../../../test.module';
+import { EasyBeamTestModule } from '../../../test.module';
 import { MockActivatedRoute } from '../../../helpers/mock-route.service';
 import { TenantPolicyDetailComponent } from '../../../../../../main/webapp/app/entities/tenant-policy/tenant-policy-detail.component';
 import { TenantPolicyService } from '../../../../../../main/webapp/app/entities/tenant-policy/tenant-policy.service';
@@ -19,7 +19,7 @@ describe('Component Tests', () => {
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
-                imports: [EasybeamTestModule],
+                imports: [EasyBeamTestModule],
                 declarations: [TenantPolicyDetailComponent],
                 providers: [
                     JhiDateUtils,

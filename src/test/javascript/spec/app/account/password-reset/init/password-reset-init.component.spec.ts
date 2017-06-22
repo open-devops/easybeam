@@ -3,7 +3,7 @@ import { Renderer, ElementRef } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { EasyBeamTestModule } from '../../../../test.module';
 import { PasswordResetInitComponent } from '../../../../../../../main/webapp/app/account/password-reset/init/password-reset-init.component';
-import { PasswordResetInit } from '../../../../../../../main/webapp/app/account/password-reset/init/password-reset-init.service';
+import { PasswordResetInitService } from '../../../../../../../main/webapp/app/account/password-reset/init/password-reset-init.service';
 
 
 describe('Component Tests', () => {

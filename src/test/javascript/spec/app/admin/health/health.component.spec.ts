@@ -15,7 +15,7 @@ describe('Component Tests', () => {
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
-                imports: [EasybeamTestModule],
+                imports: [EasyBeamTestModule],
                 declarations: [JhiHealthCheckComponent],
                 providers: [
                     JhiHealthService,

@@ -3,10 +3,10 @@ import { Renderer, ElementRef } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { JhiLanguageService } from 'ng-jhipster';
 import { MockLanguageService } from '../../../helpers/mock-language.service';
-import { EasybeamTestModule } from '../../../test.module';
+import { EasyBeamTestModule } from '../../../test.module';
 import { LoginModalService } from '../../../../../../main/webapp/app/shared';
-import { Register } from '../../../../../../main/webapp/app/account/register/register.service';
-import { RegisterComponent } from '../../../../../../main/webapp/app/account/register/register.component';
+import { Register } from '../../../../../../main/webapp/app/home/register/register.service';
+import { RegisterComponent } from '../../../../../../main/webapp/app/home/register/register.component';
 
 describe('Component Tests', () => {
 
@@ -16,7 +16,7 @@ describe('Component Tests', () => {
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
-                imports: [EasybeamTestModule],
+                imports: [EasyBeamTestModule],
                 declarations: [RegisterComponent],
                 providers: [
                     Register,
