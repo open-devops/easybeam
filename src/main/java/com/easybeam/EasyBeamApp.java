@@ -24,7 +24,7 @@ import java.util.Collection;
 @ComponentScan
 @EnableAutoConfiguration(exclude = {MetricFilterAutoConfiguration.class, MetricRepositoryAutoConfiguration.class})
 @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
-public class EasybeamApp {
+public class EasyBeamApp {
 
     private static final Logger log = LoggerFactory.getLogger(EasyBeamApp.class);
 
