@@ -50,39 +50,37 @@
             "project-mgr": {
                 "main": "プロジェクトマネジメント",
                 "menu": {
-                    "admmin": "管理者メニュー",
+                    "admin": "管理者メニュー",
                     "projects": "プロジェクト",
-                    "requirements": "要件定義",
                     "assignments": "アサインメント",
                     "groups": "グループ",
                     "users": "ユーザー",
                     "roles": "ロール"
                 }
             },
-            "require-mgr": {
-                "main": "要件定義マネジメント",
+            "pipeline-mgr": {
+                "main": "パイプラインマネジメント",
                 "menu": {
-                    "admmin": "Admin Menu",
+                    "admin": "管理者メニュー",
                     "epics": "Epics",
-                    "stories": "Stories",
-                    "tasks": "Tasks",
-                    "dashboard": "Dashboard"
+                    "pipelines": "パイプライン",
+                    "processes": "プロセス"
+
                 }
             },
-            "library-mgr": {
-                "main": "テスト資産マネジメント"
-            },
-            "design-mgr": {
-                "main": "テスト設計マネジメント",
+            "runner-mgr": {
+                "main": "ランナーマネジメント",
                 "menu": {
-                    "admmin": "管理者メニュー",
-                    "test-cases": "テストケース",
-                    "test-scenarios": "テストシナリオ",
-                    "test-components": "テストコンポーネント"
+                    "admin": "管理者メニュー",
+                    "runners": "ランナー"
                 }
             },
-            "run-mgr": {
-                "main": "テスト実行マネジメント"
+            "job-mgr": {
+                "main": "ジョブマネジメント",
+                "menu": {
+                    "admin": "管理者メニュー",
+                    "jobs": "ジョブ"
+                }
             }
         },
         "form": {

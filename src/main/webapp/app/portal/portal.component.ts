@@ -34,16 +34,21 @@ export class PortalComponent implements OnInit, AfterViewInit {
         route: '/portal/project-mgr/projects',
         icon: 'library_add',
       }, {
-        titleKey: 'global.sidebar.require-mgr.main',
+        titleKey: 'global.sidebar.pipeline-mgr.main',
         title: 'Pipeline Management',
-        route: '/portal/require-mgr/requires',
+        route: '/portal/pipeline-mgr/pipelines',
         icon: 'collections_bookmark',
       }, {
-        titleKey: 'global.sidebar.library-mgr.main',
-        title: 'Job Runner Management',
-        route: '/portal/test-design/test-scenarios',
+        titleKey: 'global.sidebar.runner-mgr.main',
+        title: 'Runner Management',
+        route: '/portal/runner-mgr/runners',
         icon: 'photo_library',
-      }
+      }, {
+        titleKey: 'global.sidebar.job-mgr.main',
+        title: 'Job Management',
+        route: '/portal/job-mgr/jobs',
+        icon: 'photo_library',
+    }
     ];
 
     account: any;

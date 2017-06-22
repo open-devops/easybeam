@@ -50,7 +50,7 @@
             "project-mgr": {
                 "main": "项目管理",
                 "menu": {
-                    "admmin": "管理者菜单",
+                    "admin": "管理者菜单",
                     "projects": "项目",
                     "requirements": "需求",
                     "assignments": "用户授权",
@@ -59,30 +59,28 @@
                     "roles": "角色"
                 }
             },
-            "require-mgr": {
-                "main": "需求管理",
+            "pipeline-mgr": {
+                "main": "流水线管理",
                 "menu": {
-                    "admmin": "管理者菜单",
-                    "epics": "史诗故事",
-                    "stories": "用户故事",
-                    "tasks": "任务",
-                    "dashboard": "仪表盘"
+                    "admin": "管理者菜单",
+                    "pipelines": "流水线",
+                    "processes": "流程"
+
                 }
             },
-            "library-mgr": {
-                "main": "对象库管理"
-            },
-            "design-mgr": {
-                "main": "测试设计管理",
+            "runner-mgr": {
+                "main": "运行器管理",
                 "menu": {
-                    "admmin": "管理者菜单",
-                    "test-cases": "测试用例",
-                    "test-scenarios": "测试场景",
-                    "test-components": "测试组件"
+                    "admin": "管理者菜单",
+                    "runners": "运行器"
                 }
             },
-            "run-mgr": {
-                "main": "测试运行管理"
+            "job-mgr": {
+                "main": "作业管理",
+                "menu": {
+                    "admin": "管理者菜单",
+                    "jobs": "作业"
+                }
             }
         },
         "form": {

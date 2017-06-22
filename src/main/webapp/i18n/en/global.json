@@ -50,39 +50,35 @@
             "project-mgr": {
                 "main": "Project Management",
                 "menu": {
-                    "admmin": "Admin Menu",
+                    "admin": "Admin Menu",
                     "projects": "Projects",
-                    "requirements": "Requirements",
                     "assignments": "Assignments",
                     "groups": "Groups",
                     "users": "Users",
                     "roles": "Roles"
                 }
             },
-            "require-mgr": {
-                "main": "Requirement Management",
+            "pipeline-mgr": {
+                "main": "Pipeline Management",
                 "menu": {
-                    "admmin": "Admin Menu",
-                    "epics": "Epics",
-                    "stories": "Stories",
-                    "tasks": "Tasks",
-                    "dashboard": "Dashboard"
+                    "admin": "Admin Menu",
+                    "pipelines": "Pipelines",
+                    "processes": "Processes"
                 }
             },
-            "library-mgr": {
-                "main": "Test Library Management"
-            },
-            "design-mgr": {
-                "main": "Test Design Management",
+            "runner-mgr": {
+                "main": "Runner Management",
                 "menu": {
-                    "admmin": "Admin Menu",
-                    "test-cases": "Test Cases",
-                    "test-scenarios": "Test Scenarios",
-                    "test-components": "Test Components"
+                    "admin": "Admin Menu",
+                    "runners": "Runners"
                 }
             },
-            "run-mgr": {
-                "main": "Test Run Management"
+            "job-mgr": {
+                "main": "Job Management",
+                "menu": {
+                    "admin": "Admin Menu",
+                    "jobs": "Jobs"
+                }
             }
         },
         "form": {
